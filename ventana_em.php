@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 
 if (isset($_POST['btnOK']) == 'OK') {
     header('Location: selecciona_cat.php');

@@ -1,0 +1,57 @@
+header
+{
+    background-color: #ece5dd;
+    color: black;
+    padding: 3rem 2rem;
+}
+
+header h1
+{
+    font-family: 'Playfair Display';
+    text-align: center;
+    font-size: 50px;
+}
+
+body
+{
+    background-color: #efefef;
+}
+
+.boton
+{
+    
+    background-color: rgb(60, 156, 60);
+    padding: 1rem;
+    border-radius: 5px;
+    float: left;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.boton:hover
+{
+    background-color: white;
+}
+
+a
+{
+    color: black;
+}
+
+.container
+{
+    width: 400px;
+    float: left;
+    margin: 10px;
+}
+
+section article
+{
+    transition: box-shadow 0.3s ease;
+    cursor: pointer;
+    border-radius: 5px;
+}
+section article:hover
+{
+    box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.5);
+}

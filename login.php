@@ -1,6 +1,5 @@
 <?php
-
-    error_reporting(0);
+error_reporting(0);
 
     if (isset($_POST['btnentrar'])== 'entrar') {
         header('Location: ventana_em.php');

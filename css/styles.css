@@ -1,6 +1,10 @@
+::placeholder{
+  padding-left: 10px;
+}
+
 .logo_formulario{
     max-width: 25%;
-    margin-left: 35%;
+    margin-left: 40%;
     margin-top: 30%;
 }
 .matricula{
@@ -11,6 +15,7 @@
   top: 274px;
   background: #D9D9D9;
   border-radius: 50px;
+  border: 0;
 }
 .contrasena{
   position: absolute;
@@ -20,6 +25,7 @@
   top: 340px;
   background: #D9D9D9;
   border-radius: 50px;
+  border: 0;
 }
 
 .imagen_fondo{
@@ -40,7 +46,7 @@
   100%{left: 0; bottom: 400px;}
 }
 .entrar{
-  position: absolute;
+position: absolute;
 width: 119px;
 height: 41px;
 left: 128px;
@@ -48,6 +54,7 @@ top: 412px;
 color: white;
 background: #2FC72F;
 border-radius: 50px;
+border: 0;
 }
 .fondo{
   position: relative;
@@ -78,7 +85,6 @@ font-weight: 400;
 font-size: 24px;
 line-height: 29px;
 text-align: center;
-
 color: #000000; 
 }
 .Rectangle4{
@@ -106,5 +112,265 @@ font-size: 20px;
 line-height: 24px;
 text-align: center;
 }
+.selecciona{
+position: absolute;
+width: 383px;
+height: 93px;
+left: -4px;
+top: 79px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 40px;
+line-height: 48px;
+text-align: center;
+letter-spacing: 0.03em;
+color: #FFFFFF;
+}
+.btninstrumentos{
+  position: absolute;
+  width: 325px;
+  height: 83px;
+  left: 25px;
+  top: 231px;
+  border-radius: 50px;
+  border: 1px solid #5e5e5e;
+}
+.btndeportivos{
+  position: absolute;
+width: 325px;
+height: 83px;
+left: 25px;
+top: 335px;
+border-radius: 50px;
+border: 1px solid #5e5e5e;
+}
+.btncultural{
+  position: absolute;
+  width: 325px;
+  height: 83px;
+  left: 25px;
+  top: 452px;
+  border-radius: 50px;
+  opacity: .5;
+  border: 1px solid #5e5e5e;
+}
+.palabra_instrumentos{
+position: absolute;
+z-index: 1;
+width: 212px;
+height: 38px;
+left: 82px;
+top: 226px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 32px;
+line-height: 39px;
+text-align: center;
+color: #FFFFFF;
+}
+.palabra_deportivos{
+position: absolute;
+z-index: 1;
+width: 170px;
+height: 35px;
+left: 103px;
+top: 325px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 32px;
+line-height: 39px;
+text-align: center;
+
+color: #FFFFFF; 
+}
+.palabra_cultural{
+position: absolute;
+z-index: 1;
+width: 120px;
+height: 23px;
+left: 128px;
+top: 445px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 32px;
+line-height: 39px;
+text-align: center;
+color: #FFFFFF;
+}
+.palabra_selecciona{
+position: absolute;
+width: 263px;
+height: 51px;
+left: 48px;
+top: 60px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 40px;
+line-height: 48px;
+text-align: center;
+color: #FFFFFF;
+}
+.Rectangle8{
+  position: absolute;
+width: 80px;
+height: 80px;
+left: 39px;
+top: 166px;
+
+background: url(01.jpg), #FFFFFF;
+border-radius: 10px;
+}
+.balon_futbol{
+  position: absolute;
+width: 70px;
+height: 15px;
+left: 44px;
+top: 249px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 15px;
+/* identical to box height */
+
+text-align: center;
+
+color: #FFFFFF;
+}
+.palabra_ajedrez{
+position: absolute;
+width: 44px;
+height: 15px;
+left: 165px;
+top: 249px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 15px;
+/* identical to box height */
+
+text-align: center;
+
+color: #FFFFFF;
+}
+.palabra_audifonos{
+position: absolute;
+width: 59px;
+height: 15px;
+left: 158px;
+top: 362px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 15px;
+/* identical to box height */
+
+text-align: center;
+
+color: #FFFFFF;
+}
+.Rectangle11{
+position: absolute;
+width: 80px;
+height: 80px;
+left: 39px;
+top: 279px;
+
+background: #D9D9D9;
+border-radius: 10px; 
+}
+.Rectangle14{
+position: absolute;
+width: 80px;
+height: 80px;
+left: 39px;
+top: 392px;
+
+background: #D9D9D9;
+border-radius: 10px; 
+}
+.Rectangle9{
+position: absolute;
+width: 80px;
+height: 80px;
+left: 147px;
+top: 166px;
+
+background: url(Chess_perspective_matte-128x128.png), #FFFFFF;
+border-radius: 10px; 
+}
+.Rectangle12 {
+position: absolute;
+width: 80px;
+height: 80px;
+left: 147px;
+top: 279px;
+
+background: url(headphones.png), #FFFFFF;
+border-radius: 10px; 
+}
+.Rectangle15{
+position: absolute;
+width: 80px;
+height: 80px;
+left: 147px;
+top: 392px;
+
+background: #D9D9D9;
+border-radius: 10px; 
+}
+.Rectangle10{
+ position: absolute;
+width: 80px;
+height: 80px;
+left: 255px;
+top: 166px;
+
+background: #D9D9D9;
+border-radius: 10px; 
+}
+.Rectangle13{
+  position: absolute;
+width: 80px;
+height: 80px;
+left: 255px;
+top: 279px;
+
+background: #D9D9D9;
+border-radius: 10px;
+}
+.Rectangle16{
+  position: absolute;
+width: 80px;
+height: 80px;
+left: 255px;
+top: 392px;
+
+background: url(Guitar-128x128.png), #FFFFFF;
+opacity: 0.5;
+border-radius: 10px;
+}
+
+
+
+
+
+
+
+
+
 
 
