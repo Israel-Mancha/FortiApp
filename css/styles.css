@@ -117,7 +117,7 @@ position: absolute;
 width: 383px;
 height: 93px;
 left: -4px;
-top: 79px;
+top: 65px;
 
 font-family: 'Inter';
 font-style: normal;
@@ -212,7 +212,7 @@ top: 60px;
 font-family: 'Inter';
 font-style: normal;
 font-weight: 700;
-font-size: 40px;
+font-size: 45px;
 line-height: 48px;
 text-align: center;
 color: #FFFFFF;
@@ -224,7 +224,7 @@ height: 80px;
 left: 39px;
 top: 166px;
 
-background: url(01.jpg), #FFFFFF;
+background: #ffffff;
 border-radius: 10px;
 }
 .balon_futbol{
@@ -288,7 +288,7 @@ height: 80px;
 left: 39px;
 top: 279px;
 
-background: #D9D9D9;
+background: #ffffff;
 border-radius: 10px; 
 }
 .Rectangle14{
@@ -298,7 +298,7 @@ height: 80px;
 left: 39px;
 top: 392px;
 
-background: #D9D9D9;
+background: #ffffff;
 border-radius: 10px; 
 }
 .Rectangle9{
@@ -308,7 +308,7 @@ height: 80px;
 left: 147px;
 top: 166px;
 
-background: url(Chess_perspective_matte-128x128.png), #FFFFFF;
+background: #ffffff;
 border-radius: 10px; 
 }
 .Rectangle12 {
@@ -318,7 +318,7 @@ height: 80px;
 left: 147px;
 top: 279px;
 
-background: url(headphones.png), #FFFFFF;
+background: #ffffff;
 border-radius: 10px; 
 }
 .Rectangle15{
@@ -328,7 +328,7 @@ height: 80px;
 left: 147px;
 top: 392px;
 
-background: #D9D9D9;
+background: #ffffff;
 border-radius: 10px; 
 }
 .Rectangle10{
@@ -338,7 +338,7 @@ height: 80px;
 left: 255px;
 top: 166px;
 
-background: #D9D9D9;
+background: #ffffff;
 border-radius: 10px; 
 }
 .Rectangle13{
@@ -348,7 +348,7 @@ height: 80px;
 left: 255px;
 top: 279px;
 
-background: #D9D9D9;
+background: #ffffff;
 border-radius: 10px;
 }
 .Rectangle16{
@@ -357,19 +357,59 @@ width: 80px;
 height: 80px;
 left: 255px;
 top: 392px;
-
-background: url(Guitar-128x128.png), #FFFFFF;
-opacity: 0.5;
+background: #ffffff;
 border-radius: 10px;
 }
+.content{
+    width: 300px;
+    height: 300px;
+    top: 30px;
+    position: absolute;
+}
+.btnvolver{
+position: absolute;
+width: 83px;
+height: 24px;
+left: 146px;
+top: 601px;
 
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 20px;
+line-height: 24px;
+text-align: center;
+text-decoration-line: underline;
 
+color: rgba(255, 255, 255, 0.87);
+}
+.Rectangle17{
+ position: absolute;
+width: 143px;
+height: 42px;
+left: 116px;
+top: 538px;
 
+background: #FFFFFF;
+border-radius: 50px; 
+}
+.ver_todo{
+ position: absolute;
+width: 106px;
+height: 24px;
+left: 134px;
+top: 547px;
 
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 20px;
+line-height: 24px;
+text-align: center;
+text-decoration-line: none;
 
-
-
-
+color: rgba(47, 199, 47, 0.87); 
+}
 
 
 
