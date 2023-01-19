@@ -1,9 +1,23 @@
 <?php
 error_reporting(0);
+session_start();
 
-    if (isset($_POST['btnentrar'])== 'entrar') {
+require 'bd/conexion_bd.php';
+$obj = new BD_POO();
+
+/*if (isset($_POST['btnentrar']) == 'entrar') {
+    $user = $_POST['txtmatricula'];
+    $password = $_POST['txtcontra'];
+    $usuario = $obj->Ejecutar_Instruccion("Select *from tbl_usuario where matricula='$user' and contraseña='$password'");
+    if ($usuario[0][0]>0) {
+        //Verifica que el usuario exista
+        $_SESSION['usuario'] = $usuario[0][0];
         header('Location: ventana_em.php');
+    }else{
+        //Si el usuario NO existe
+        echo '<script>alert("Usuario no encontrado");</script>';
     }
+}*/
 
     ?>
 
@@ -27,8 +41,8 @@ error_reporting(0);
     <div>
     <form action="login.php" method="post">
 
-      <input type="text" class="matricula" placeholder="Matrícula">  
-      <input type="password" class="contrasena" placeholder="Contraseña">
+      <input type="text" name="txtmatricula" id="txtmatricula" class="matricula" placeholder="Matrícula">  
+      <input type="password" name="txtcontra" id="txtcontra" class="contrasena" placeholder="Contraseña">
       <input type="submit" class="entrar" value="ENTRAR" id="btnentrar" name="btnentrar">  
 
       </form>  
