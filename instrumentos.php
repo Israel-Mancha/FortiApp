@@ -31,7 +31,7 @@ error_reporting(0);
     <div class="Rectangle15"></div>  
     </div>
     <div class="Rectangle17"></div>
-    <a class="ver_todo" href="prod_seleccionados">VER TODO</a>
+    <a class="ver_todo" href="prod_usados.php">VER TODO</a>
     <div>
         <a class="btnvolver" href="selecciona_cat.php">VOLVER</a>
     </div>

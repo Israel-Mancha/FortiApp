@@ -410,6 +410,20 @@ text-decoration-line: none;
 
 color: rgba(47, 199, 47, 0.87); 
 }
+.prod_uso{
+position: absolute;
+width: 373px;
+height: 39px;
+left: 1px;
+top: 76px;
 
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 36px;
+line-height: 44px;
+text-align: center;
 
+color: #FFFFFF;
 
+}
