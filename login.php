@@ -2,7 +2,7 @@
 error_reporting(0);
 session_start();
 
-require 'bd/conexion_bd.php';
+require 'bd.php';
 $obj = new BD_POO();
 
 /*if (isset($_POST['btnentrar']) == 'entrar') {
