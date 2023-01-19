@@ -93,9 +93,9 @@ width: 91px;
 height: 34px;
 left: 142px;
 top: 361px;
-
 background: rgba(47, 199, 47, 0.87);
-border-radius: 50px;  
+border-radius: 50px;
+border: 0;  
 }
 .OK{
 position: absolute;
