@@ -5,7 +5,7 @@ session_start();
 require 'bd.php';
 $obj = new BD_POO();
 
-/*if (isset($_POST['btnentrar']) == 'entrar') {
+if (isset($_POST['btnentrar']) == 'entrar') {
     $user = $_POST['txtmatricula'];
     $password = $_POST['txtcontra'];
     $usuario = $obj->Ejecutar_Instruccion("Select *from tbl_usuario where matricula='$user' and contraseña='$password'");
@@ -17,7 +17,7 @@ $obj = new BD_POO();
         //Si el usuario NO existe
         echo '<script>alert("Usuario no encontrado");</script>';
     }
-}*/
+}
 
     ?>
 
