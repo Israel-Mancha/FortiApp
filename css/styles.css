@@ -93,9 +93,9 @@ width: 91px;
 height: 34px;
 left: 142px;
 top: 361px;
-
 background: rgba(47, 199, 47, 0.87);
-border-radius: 50px;  
+border-radius: 50px;
+border: 0;  
 }
 .OK{
 position: absolute;
@@ -135,7 +135,7 @@ color: #FFFFFF;
   left: 25px;
   top: 231px;
   border-radius: 50px;
-  border: 1px solid #5e5e5e;
+  border: 0;
 }
 .btndeportivos{
   position: absolute;
@@ -144,7 +144,7 @@ height: 83px;
 left: 25px;
 top: 335px;
 border-radius: 50px;
-border: 1px solid #5e5e5e;
+border: 0;
 }
 .btncultural{
   position: absolute;
@@ -153,8 +153,7 @@ border: 1px solid #5e5e5e;
   left: 25px;
   top: 452px;
   border-radius: 50px;
-  opacity: .5;
-  border: 1px solid #5e5e5e;
+  border: 0;
 }
 .palabra_instrumentos{
 position: absolute;
