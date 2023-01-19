@@ -8,7 +8,7 @@ $obj = new BD_POO();
 if (isset($_POST['btnentrar']) == 'entrar') {
     $user = $_POST['txtmatricula'];
     $password = $_POST['txtcontra'];
-    $usuario = $obj->Ejecutar_Instruccion("Select *from tbl_usuario where matricula='$user' and contraseña='$password'");
+    $usuario = $obj->Ejecutar_Instruccion("Select *from tbl_usuario where matricula='$user' and curp='$password'");
     if ($usuario[0][0]>0) {
         //Verifica que el usuario exista
         $_SESSION['usuario'] = $usuario[0][0];
@@ -29,6 +29,7 @@ if (isset($_POST['btnentrar']) == 'entrar') {
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/styles.css">
+    <script type="text/javascript" src="js/script_login.js"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>FortiApp</title>
@@ -41,8 +42,8 @@ if (isset($_POST['btnentrar']) == 'entrar') {
     <div>
     <form action="login.php" method="post">
 
-      <input type="text" name="txtmatricula" id="txtmatricula" class="matricula" placeholder="Matrícula">  
-      <input type="password" name="txtcontra" id="txtcontra" class="contrasena" placeholder="Contraseña">
+      <input type="text" name="txtmatricula" id="txtmatricula" class="matricula" placeholder="Matrícula" onkeyup="this.value=Numeros(this.value)" maxlength="8">  
+      <input type="text" name="txtcontra" id="txtcontra" onkeyup="mayus(this);" class="contrasena" placeholder="Contraseña" maxlength="18">
       <input type="submit" class="entrar" value="ENTRAR" id="btnentrar" name="btnentrar">  
 
       </form>  
