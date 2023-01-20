@@ -13,20 +13,19 @@ if (isset($_POST['btnentrar']) == 'entrar') {
         //Verifica que el usuario exista
         $_SESSION['usuario'] = $usuario[0][0];
         header('Location: ventana_em.php');
-    }else{
-        //Si el usuario NO existe
+    }/*else {
+        # code...
         echo '<script>alert("Usuario no encontrado");</script>';
-    }
+    }*/
 }
-
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/styles.css">
     <script type="text/javascript" src="js/script_login.js"></script>
@@ -36,18 +35,13 @@ if (isset($_POST['btnentrar']) == 'entrar') {
     <title>FortiApp</title>
 </head>
 <body>
-
     <img class="logo_formulario"src="img/logo_default.png" alt="Logo">
     <div>
-    <form action="login.php" method="post">
-
-      <input type="text" name="txtmatricula" id="txtmatricula" onkeyup="matricula(this);" class="matricula" placeholder="Matrícula"  >  
-      <input type="text" name="txtcontra" id="txtcontra" onkeypress="return check(event)" onkeyup="mayus(this);" class="contrasena" placeholder="Contraseña">
-      
-      <input type="submit" class="entrar" value="ENTRAR" id="btnentrar" name="btnentrar">  
-
-      </form>  
+        <form action="login.php" method="post">
+            <input type="text" name="txtmatricula" id="txtmatricula" onkeyup="matricula(this);" class="matricula" placeholder="Matrícula"  >  
+            <input type="text" name="txtcontra" id="txtcontra" onkeypress="return check(event)" onkeyup="mayus(this);" class="contrasena" placeholder="Contraseña">
+            <input type="submit" class="entrar" value="ENTRAR" id="btnentrar" name="btnentrar" onclick="validar()">  
+        </form>  
     </div>
-    
 </body>
 </html>

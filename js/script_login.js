@@ -1,6 +1,6 @@
 /*---------VALIDACION DE LA MATRICULA---------- */
 function matricula(e){
-    //Permite solo 8 caracteres
+    //Permite solo numeros hasta 8 caracteres
     $(document).ready(function () {
         $('input#txtmatricula')
             .keypress(function (event) {
@@ -15,7 +15,7 @@ function matricula(e){
 
 /*-------------VALIDACION DEL CURP-------------- */
 function mayus(e) {
-    //Convierte letras en mayusculas
+    //Convierte minusculas en mayusculas
     e.value = e.value.toUpperCase();
 
     //Permite solo 18 caracteres
@@ -43,3 +43,20 @@ function check(e) {
     return patron.test(tecla_final);
 }
 /*-------------VALIDACION DEL CURP-------------- */
+
+/*-------------VALIDACION DE CAMPOS VACIOS-------------- */
+function validar() {
+    if ($('#txtmatricula').val().length == 0) {
+      alert('Por favor llene todos los campos');
+      return false;
+    }
+    if ($('#txtcontra').val().length == 0) {
+        alert('Por favor llene todos los campos');
+        return false;
+    }
+    if ($('#txtcontra').val() != $('#txtmatricula').val()) {
+        alert("Usuario no encontrado");
+        return false;
+    }
+}
+/*-------------VALIDACION DE CAMPOS VACIOS-------------- */
