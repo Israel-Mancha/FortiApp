@@ -1,5 +1,6 @@
 /*---------VALIDACION DE LA MATRICULA---------- */
 function matricula(e){
+    //Permite solo 8 caracteres
     $(document).ready(function () {
         $('input#txtmatricula')
             .keypress(function (event) {
@@ -14,8 +15,10 @@ function matricula(e){
 
 /*-------------VALIDACION DEL CURP-------------- */
 function mayus(e) {
+    //Convierte letras en mayusculas
     e.value = e.value.toUpperCase();
 
+    //Permite solo 18 caracteres
     $(document).ready(function () {
         $('input#txtcontra')
             .keypress(function (event) {
