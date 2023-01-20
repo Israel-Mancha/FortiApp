@@ -43,7 +43,7 @@ if (isset($_POST['btnentrar']) == 'entrar') {
     <form action="login.php" method="post">
 
       <input type="text" name="txtmatricula" id="txtmatricula" class="matricula" placeholder="Matrícula" onkeyup="this.value=Numeros(this.value)" maxlength="8">  
-      <input type="text" name="txtcontra" id="txtcontra" onkeyup="mayus(this);" class="contrasena" placeholder="Contraseña" maxlength="18">
+      <input type="text" name="txtcontra" id="txtcontra" onkeyup="mayus(this);" class="contrasena" placeholder="CURP" maxlength="18">
       <input type="submit" class="entrar" value="ENTRAR" id="btnentrar" name="btnentrar">  
 
       </form>  

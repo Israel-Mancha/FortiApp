@@ -23,7 +23,7 @@ error_reporting(0);
     <!-- Este div es para el botón de la sección de instrumentos -->
     
     <div> 
-        <p class="palabra_instrumentos">Instrumentos</p>
+        <a href="instrumentos.php" class="palabra_instrumentos">Instrumentos</a>
         <a href="instrumentos.php">
         <img class="btninstrumentos" src="img/jefferson-santos-fCEJGBzAkrU-unsplash.jpg" alt="foto de guitarra">    
         </a>
@@ -31,7 +31,7 @@ error_reporting(0);
     </div>
     <!-- Este div es para el botón de la sección de deportivos -->
     <div> 
-        <p class="palabra_deportivos">Deportivos</p>
+        <a href="deportivos.php" class="palabra_deportivos">Deportivos</a>
         <a href="deportivos.php">
         <img class="btndeportivos" src="img/sandro-schuh-HgwY_YQ1m0w-unsplash.jpg" alt="foto de deportes">    
         </a>
@@ -39,7 +39,7 @@ error_reporting(0);
     </div>
     <!-- Este div es para el botón de la sección de cultural -->
     <div>
-        <p class="palabra_cultural">Cultural</p>
+        <a href="cultural.php" class="palabra_cultural">Cultural</a>
         <a href="cultural.php">
         <img class="btncultural" src="img/jorge-aguilar-vZ9TqSm9ZsQ-unsplash.jpg" alt="foto de bandera de méxico">    
         </a>
