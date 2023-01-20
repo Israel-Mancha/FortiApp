@@ -44,6 +44,7 @@ function check(e) {
 }
 /*-------------VALIDACION DEL CURP-------------- */
 
+
 /*-------------VALIDACION DE CAMPOS VACIOS-------------- */
 function validar() {
     if ($('#txtmatricula').val().length == 0) {
