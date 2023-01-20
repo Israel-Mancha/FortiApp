@@ -43,6 +43,7 @@ if (isset($_POST['btnentrar']) == 'entrar') {
 
       <input type="text" name="txtmatricula" id="txtmatricula" onkeyup="matricula(this);" class="matricula" placeholder="Matrícula"  >  
       <input type="text" name="txtcontra" id="txtcontra" onkeypress="return check(event)" onkeyup="mayus(this);" class="contrasena" placeholder="Contraseña">
+      
       <input type="submit" class="entrar" value="ENTRAR" id="btnentrar" name="btnentrar">  
 
       </form>  

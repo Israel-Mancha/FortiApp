@@ -156,52 +156,52 @@ border: 0;
   border: 0;
 }
 .palabra_instrumentos{
-position: absolute;
-z-index: 1;
-width: 212px;
-height: 38px;
-left: 82px;
-top: 226px;
-font-family: 'Inter';
-font-style: normal;
-font-weight: 500;
-font-size: 32px;
-line-height: 39px;
-text-align: center;
-color: #FFFFFF;
+  position: absolute;
+  z-index: 1;
+  width: 212px;
+  height: 38px;
+  left: 82px;
+  top: 251px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 39px;
+  text-align: center;
+  color: #FFFFFF;
+  text-decoration: none;
 }
 .palabra_deportivos{
-position: absolute;
-z-index: 1;
-width: 170px;
-height: 35px;
-left: 103px;
-top: 325px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 500;
-font-size: 32px;
-line-height: 39px;
-text-align: center;
-
-color: #FFFFFF; 
+  position: absolute;
+  z-index: 1;
+  width: 170px;
+  height: 35px;
+  left: 103px;
+  top: 355px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 39px;
+  text-align: center;
+  color: #FFFFFF;
+  text-decoration: none;
 }
 .palabra_cultural{
-position: absolute;
-z-index: 1;
-width: 120px;
-height: 23px;
-left: 128px;
-top: 445px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 500;
-font-size: 32px;
-line-height: 39px;
-text-align: center;
-color: #FFFFFF;
+  position: absolute;
+  z-index: 1;
+  width: 120px;
+  height: 23px;
+  left: 128px;
+  top: 475px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 39px;
+  text-align: center;
+  color: #FFFFFF;
+  text-decoration: none;
 }
 .palabra_selecciona{
 position: absolute;
