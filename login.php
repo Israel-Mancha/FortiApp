@@ -19,7 +19,7 @@ if (isset($_POST['btnentrar']) == 'entrar') {
     }
 }
 
-    ?>
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -30,20 +30,19 @@ if (isset($_POST['btnentrar']) == 'entrar') {
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/styles.css">
     <script type="text/javascript" src="js/script_login.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <title>FortiApp</title>
 </head>
 <body>
-
-    
 
     <img class="logo_formulario"src="img/logo_default.png" alt="Logo">
     <div>
     <form action="login.php" method="post">
 
-      <input type="text" name="txtmatricula" id="txtmatricula" class="matricula" placeholder="Matrícula" onkeyup="this.value=Numeros(this.value)" maxlength="8">  
-      <input type="text" name="txtcontra" id="txtcontra" onkeyup="mayus(this);" class="contrasena" placeholder="Contraseña" maxlength="18">
+      <input type="text" name="txtmatricula" id="txtmatricula" onkeyup="matricula(this);" class="matricula" placeholder="Matrícula"  >  
+      <input type="text" name="txtcontra" id="txtcontra" onkeypress="return check(event)" onkeyup="mayus(this);" class="contrasena" placeholder="Contraseña">
       <input type="submit" class="entrar" value="ENTRAR" id="btnentrar" name="btnentrar">  
 
       </form>  
