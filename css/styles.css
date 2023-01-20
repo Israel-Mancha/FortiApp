@@ -1,4 +1,4 @@
-::placeholder{
+::placeholder, input{
   padding-left: 10px;
 }
 
@@ -57,9 +57,6 @@ border-radius: 50px;
 border: 0;
 }
 .fondo{
-  position: relative;
-    width: 375px;
-    height: 667px;
     background: radial-gradient(49.1% 49.1% at 50% 50%, #2FC72F 0%, rgba(47, 199, 47, 0.87) 100%);
 }
 .Rectangle3{
@@ -226,6 +223,13 @@ top: 166px;
 
 background: #ffffff;
 border-radius: 10px;
+}
+.Rectangle8:hover{
+  border: 5px solid #00FF00;
+}
+
+.desactivado{
+  opacity: .5;
 }
 .balon_futbol{
   position: absolute;
@@ -426,4 +430,36 @@ text-align: center;
 
 color: #FFFFFF;
 
+}
+.FlexContainer {
+  display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: flex-start;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    flex-direction: row;
+    padding-top: 5em;
+}
+
+.FlexContainer div {
+  width: 25%;
+    height: 113px;
+    margin: 7px;
+  background-color: lightblue;
+}
+.titulo{
+
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-size: 3em;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  color: white;
 }
