@@ -7,6 +7,9 @@ error_reporting(0);
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,24 +18,23 @@ error_reporting(0);
 </head>
 <body class="fondo">
 
-    <p class="palabra_selecciona">¡Selecciona!</p>
-    <div class="content">
-      <div class="Rectangle8"></div>
-    <div class="balon_futbol"></div>
-    <div class="palabra_ajedrez"></div>
-    <div class="palabra_audifonos"></div>
-    <div class="Rectangle11"></div>
-    <div class="Rectangle14"></div>
-    <div class="Rectangle9"></div>
-    <div class="Rectangle12"></div>
-    <div class="Rectangle10"></div>
-    <div class="Rectangle13"></div>
-    <div class="Rectangle16"></div>
-    <div class="Rectangle15"></div>  
-    </div>
-    <div class="Rectangle17"></div>
-    <a class="ver_todo" href="prod_seleccionados">VER TODO</a>
+    <div class="titulo">¡Selecciona!</div>
+    <section class='FlexContainer'>
+         
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </section>
+    
     <div>
+        <a class="ver_todo" href="prod_usados.php">VER TODO</a>
+         <div class="Rectangle17"></div>
         <a class="btnvolver" href="selecciona_cat.php">VOLVER</a>
     </div>
         

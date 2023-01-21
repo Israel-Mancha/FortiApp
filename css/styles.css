@@ -393,7 +393,7 @@ width: 143px;
 height: 42px;
 left: 116px;
 top: 538px;
-
+z-index: -1;
 background: #FFFFFF;
 border-radius: 50px; 
 }
@@ -441,17 +441,18 @@ color: #FFFFFF;
     height: 100%;
     overflow: auto;
     flex-direction: row;
-    padding-top: 5em;
+    padding-top: 2em;
 }
 
 .FlexContainer div {
-  width: 25%;
-    height: 113px;
-    margin: 7px;
-  background-color: lightblue;
+  border-radius: 10px;
+    width: 25%;
+    height: 95px;
+    margin: 13px;
+    background-color: white;
 }
 .titulo{
-
+  padding-top: 1em;
   width: 100%;
   text-align: center;
   align-items: center;
