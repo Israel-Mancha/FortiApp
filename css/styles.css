@@ -451,6 +451,17 @@ color: #FFFFFF;
     margin: 13px;
     background-color: white;
 }
+.FlexContainer div img {
+  padding: 10px;
+  position: relative;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  /* width: 82%; */
+  height: 71px;  
+}
+.FlexContainer div img:hover{
+  border: 5px solid #00FF00;
+}
 .titulo{
   padding-top: 1em;
   width: 100%;

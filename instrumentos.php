@@ -27,15 +27,27 @@ error_reporting(0);
             <div>
                 <img src="img/guitar.png" alt="guitar">
             </div>
+            
+            <div>
+                <img src="img/saxofon.png" alt="saxofon">
+            </div>
+            <div>
+                <img src="img/acordeon.png" alt="acordeon">
+            </div>
+            <div>
+                <img src="img/contrabajo.png" alt="contrabajo">
+            </div>
+            <div>
+                <img src="img/cajon.png" alt="cajon">
+            </div>
+            <div>
+                <img src="img/conga.png" alt="congos">
+            </div>
+        <div></div>
             <div></div>
             <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </section>
+        </section> 
+        
     
     <div>
         <a class="ver_todo" href="prod_usados.php">VER TODO</a>
