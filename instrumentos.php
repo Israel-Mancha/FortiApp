@@ -26,24 +26,30 @@ error_reporting(0);
          
             <div>
                 <img src="img/guitar.png" alt="guitar">
+                <p>Guitarra</p>
             </div>
             
             <div>
                 <img src="img/saxofon.png" alt="saxofon">
+                <p>Saxofón</p>
             </div>
             <div>
                 <img src="img/acordeon.png" alt="acordeon">
+                <p>Acordeón</p>
             </div>
             <div>
                 <img src="img/contrabajo.png" alt="contrabajo">
+                <p>Contrabajo</p>
             </div>
             <div>
                 <img src="img/cajon.png" alt="cajon">
+                <p>Cajón</p>
             </div>
             <div>
                 <img src="img/conga.png" alt="congos">
+                <p>Congas</p>
             </div>
-        <div></div>
+            <div></div>
             <div></div>
             <div></div>
         </section> 

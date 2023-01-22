@@ -21,11 +21,26 @@ error_reporting(0);
     <div class="titulo">¡Selecciona!</div>
     <section class='FlexContainer'>
          
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+            <div>
+                <img src="img/volleyball.png" alt="volleyball">
+                <p>Volleybal</p>
+            </div>
+            <div>
+                <img src="img/baloncesto.png" alt="basketball">
+                <p>Basketball</p>
+            </div>
+            <div>
+                <img src="img/balon-fut.png" alt="futbol">
+                <p>Futbol</p>
+            </div>
+            <div>
+                <img src="img/ajedrez.png" alt="ajedrez">
+                <p>Ajedrez</p>
+            </div>
+            <div>
+                <img src="img/casaca.png" alt="casaca">
+                <p>Casacas</p>
+            </div>
             <div></div>
             <div></div>
             <div></div>

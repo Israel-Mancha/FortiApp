@@ -21,6 +21,8 @@ if (isset($_POST['btnOK']) == 'OK') {
 <body class="fondo">
    <p class="prod_uso">Productos en uso</p>
     
-    
+    <div>
+    <a class="btnvolver" href="selecciona_cat.php">VOLVER</a>
+    </div>
 </body>
 </html>

@@ -21,9 +21,18 @@ error_reporting(0);
     <div class="titulo">¡Selecciona!</div>
     <section class='FlexContainer'>
          
-            <div></div>
-            <div></div>
-            <div></div>
+            <div>
+                <img src="img/vestuario.png" alt="vestuario">
+                <p>Vestuario</p>
+            </div>
+            <div>
+                <img src="img/zapato.png" alt="zapato">
+                <p>Zapatos</p>
+            </div>
+            <div>
+                <img src="img/escolta.png" alt="escolta">
+                <p>Escolta</p>
+            </div>
             <div></div>
             <div></div>
             <div></div>

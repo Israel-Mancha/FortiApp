@@ -57,7 +57,7 @@ border-radius: 50px;
 border: 0;
 }
 .fondo{
-    background: radial-gradient(49.1% 49.1% at 50% 50%, #2FC72F 0%, rgba(47, 199, 47, 0.87) 100%);
+  background: radial-gradient(49.1% 49.1% at 50% 50%, #2FC72F 0%, rgba(47, 199, 47, 0.87) 100%)
 }
 .Rectangle3{
   position: absolute;
@@ -448,19 +448,26 @@ color: #FFFFFF;
   border-radius: 10px;
     width: 25%;
     height: 95px;
-    margin: 13px;
+    margin: 14px;
     background-color: white;
 }
 .FlexContainer div img {
-  padding: 10px;
-  position: relative;
-  border-radius: 10px;
-  background-color: #FFFFFF;
-  /* width: 82%; */
-  height: 71px;  
+    position: relative;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 100%; 
 }
 .FlexContainer div img:hover{
   border: 5px solid #00FF00;
+}
+.FlexContainer div p{
+  position: relative;
+  font-family: 'Inter';
+  font-style: normal;
+  color: white;
+  text-align: center;
+  margin: -4px;
 }
 .titulo{
   padding-top: 1em;
