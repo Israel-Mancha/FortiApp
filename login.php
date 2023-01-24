@@ -11,7 +11,7 @@ if (isset($_POST['btnentrar']) == 'entrar') {
     $usuario = $obj->Ejecutar_Instruccion("Select *from tbl_usuario where matricula='$user' and curp='$password'");
     if ($usuario[0][0]>0) {
         //Verifica que el usuario exista
-        $_SESSION['usuario'] = $usuario[0][0];
+        $_SESSION['usuario'] = $usuario[0][1];
         header('Location: ventana_em.php');
     }/*else {
         # code...

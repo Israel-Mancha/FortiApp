@@ -21,7 +21,7 @@ error_reporting(0);
     <div class="titulo">¡Selecciona!</div>
     <section class='FlexContainer'>
          
-            <div>
+            <div class="card">
                 <img src="img/volleyball.png" alt="volleyball">
                 <p>Volleybal</p>
             </div>
@@ -56,4 +56,12 @@ error_reporting(0);
     
     
 </body>
+<script>
+
+        var cards = document.getElementsByClassName('card')[0];
+        console.log(cards);
+        cards.addEventListener('click', function (e) {
+            e.target.classList.toggle('selected','');
+        });
+</script>
 </html>

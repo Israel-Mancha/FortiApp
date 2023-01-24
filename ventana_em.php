@@ -1,5 +1,7 @@
 <?php
 error_reporting(0);
+session_start();
+$usuario = $_SESSION['usuario'];
 
 if (isset($_POST['btnOK']) == 'OK') {
     header('Location: selecciona_cat.php');
@@ -20,7 +22,7 @@ if (isset($_POST['btnOK']) == 'OK') {
 </head>
 <body class="fondo">
     <div class="Rectangle3"></div>
-    <div class="registrado">¡Has sido registrado!</div>
+    <div class="registrado">¡Bienvenido, <?php echo $usuario?>!</div>
     <form action="ventana_em.php" method="post">
      <input class="Rectangle4" type="submit" id="btnOK" name="btnOK" value="OK">   
     </form>

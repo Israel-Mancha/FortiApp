@@ -458,7 +458,7 @@ color: #FFFFFF;
     width: 100%;
     height: 100%; 
 }
-.FlexContainer div img:hover{
+.FlexContainer div img.selected{
   border: 5px solid #00FF00;
 }
 .FlexContainer div p{
