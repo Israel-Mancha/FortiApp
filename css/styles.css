@@ -70,19 +70,18 @@ background: #FFFFFF;
 border-radius: 12px; 
 }
 .registrado{
-position: absolute;
-width: 130px;
-height: 46px;
-left: 123px;
-top: 290px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 24px;
-line-height: 29px;
-text-align: center;
-color: #000000; 
+  position: absolute;
+  width: 200px;
+  height: 46px;
+  left: 90px;
+  top: 290px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 29px;
+  text-align: center;
+  color: #000000;
 }
 .Rectangle4{
 position: absolute;
