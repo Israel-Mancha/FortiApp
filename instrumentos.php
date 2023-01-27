@@ -17,6 +17,7 @@ error_reporting(0);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery.js"></script>
     <title>FortiApp</title>
 </head>
 <body class="fondo">
@@ -24,28 +25,28 @@ error_reporting(0);
     <div class="titulo">¡Selecciona!</div>
     <section class='FlexContainer'>
          
-            <div>
-                <img id="img_guitarra" src="img/guitar.png" alt="guitar">
+            <div class="card">
+                <img src="img/guitar.png" alt="guitar">
                 <p>Guitarra</p>
             </div>
             
-            <div>
+            <div class="card">
                 <img src="img/saxofon.png" alt="saxofon">
                 <p>Saxofón</p>
             </div>
-            <div>
+            <div class="card">
                 <img src="img/acordeon.png" alt="acordeon">
                 <p>Acordeón</p>
             </div>
-            <div>
+            <div class="card">
                 <img src="img/contrabajo.png" alt="contrabajo">
                 <p>Contrabajo</p>
             </div>
-            <div>
+            <div class="card">
                 <img src="img/cajon.png" alt="cajon">
                 <p>Cajón</p>
             </div>
-            <div>
+            <div class="card">
                 <img src="img/conga.png" alt="congos">
                 <p>Congas</p>
             </div>
@@ -68,12 +69,15 @@ error_reporting(0);
 </body>
 
 <script>
-  let img = document.getElementById("img_guitarra"); // Encuentra el elemento "p" en el sitio
-  img.onclick = muestraAlerta; // Agrega función onclick al elemento
-  function muestraAlerta(evento) {
-    
-    alert("Evento onclick ejecutado!");
-  }
+        $(document).on('click', '.card', function(){
+            $('.card').removeClass('active');
+            $(this).addClass('active','');
+        });
+        
+        /*const confirmar = document.querySelector('.ver_todo');
+        function(confirmar){
+            texto.style.color = "blue";
+        }*/
 </script>
 
 </html>

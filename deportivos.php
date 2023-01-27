@@ -7,6 +7,7 @@ error_reporting(0);
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
@@ -14,6 +15,7 @@ error_reporting(0);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery.js"></script>
     <title>FortiApp</title>
 </head>
 <body class="fondo">
@@ -25,19 +27,19 @@ error_reporting(0);
                 <img src="img/volleyball.png" alt="volleyball">
                 <p>Volleybal</p>
             </div>
-            <div>
+            <div class="card">
                 <img src="img/baloncesto.png" alt="basketball">
                 <p>Basketball</p>
             </div>
-            <div>
+            <div class="card">
                 <img src="img/balon-fut.png" alt="futbol">
                 <p>Futbol</p>
             </div>
-            <div>
+            <div class="card">
                 <img src="img/ajedrez.png" alt="ajedrez">
                 <p>Ajedrez</p>
             </div>
-            <div>
+            <div class="card">
                 <img src="img/casaca.png" alt="casaca">
                 <p>Casacas</p>
             </div>
@@ -57,11 +59,10 @@ error_reporting(0);
     
 </body>
 <script>
-
-        var cards = document.getElementsByClassName('card')[0];
-        console.log(cards);
-        cards.addEventListener('click', function (e) {
-            e.target.classList.toggle('selected','');
+        $(document).on('click', '.card', function(){
+            
+            $('.card').removeClass('active');
+            $(this).addClass('active','');
         });
 </script>
 </html>

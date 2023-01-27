@@ -14,6 +14,7 @@ error_reporting(0);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery.js"></script>
     <title>FortiApp</title>
 </head>
 <body class="fondo">
@@ -21,15 +22,15 @@ error_reporting(0);
     <div class="titulo">¡Selecciona!</div>
     <section class='FlexContainer'>
          
-            <div>
+            <div class="card">
                 <img src="img/vestuario.png" alt="vestuario">
                 <p>Vestuario</p>
             </div>
-            <div>
+            <div class="card">
                 <img src="img/zapato.png" alt="zapato">
                 <p>Zapatos</p>
             </div>
-            <div>
+            <div class="card">
                 <img src="img/escolta.png" alt="escolta">
                 <p>Escolta</p>
             </div>
@@ -50,4 +51,12 @@ error_reporting(0);
     
     
 </body>
+<script>
+        $(document).on('click', '.card', function(){
+            
+            $('.card').removeClass('active');
+            $(this).addClass('active','');
+        });
+        
+</script>
 </html>

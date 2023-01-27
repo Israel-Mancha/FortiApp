@@ -60,7 +60,7 @@ border: 0;
   background: radial-gradient(49.1% 49.1% at 50% 50%, #2FC72F 0%, rgba(47, 199, 47, 0.87) 100%)
 }
 .Rectangle3{
-  position: absolute;
+position: absolute;
 width: 250px;
 height: 160px;
 left: 63px;
@@ -223,7 +223,7 @@ top: 166px;
 background: #ffffff;
 border-radius: 10px;
 }
-.Rectangle8:hover{
+.active{
   border: 5px solid #00FF00;
 }
 
@@ -418,7 +418,7 @@ position: absolute;
 width: 373px;
 height: 39px;
 left: 1px;
-top: 76px;
+padding-top: 1em;
 
 font-family: 'Inter';
 font-style: normal;
@@ -447,7 +447,7 @@ color: #FFFFFF;
   border-radius: 10px;
     width: 25%;
     height: 95px;
-    margin: 14px;
+    margin: 13px;
     background-color: white;
 }
 .FlexContainer div img {
@@ -466,7 +466,7 @@ color: #FFFFFF;
   font-style: normal;
   color: white;
   text-align: center;
-  margin: -4px;
+  margin: 0px;
 }
 .titulo{
   padding-top: 1em;
