@@ -25,7 +25,7 @@ error_reporting(0);
     <section class='FlexContainer'>
          
             <div>
-                <img src="img/guitar.png" alt="guitar">
+                <img id="img_guitarra" src="img/guitar.png" alt="guitar">
                 <p>Guitarra</p>
             </div>
             
@@ -52,6 +52,8 @@ error_reporting(0);
             <div></div>
             <div></div>
             <div></div>
+        
+            
         </section> 
         
     
@@ -64,4 +66,14 @@ error_reporting(0);
     
     
 </body>
+
+<script>
+  let img = document.getElementById("img_guitarra"); // Encuentra el elemento "p" en el sitio
+  img.onclick = muestraAlerta; // Agrega función onclick al elemento
+  function muestraAlerta(evento) {
+    
+    alert("Evento onclick ejecutado!");
+  }
+</script>
+
 </html>
