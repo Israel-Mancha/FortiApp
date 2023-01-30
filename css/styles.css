@@ -370,11 +370,11 @@ border-radius: 10px;
     position: absolute;
 }
 .btnvolver{
-position: absolute;
+position: relative; /*Cambie a relative pq si*/
 width: 83px;
 height: 24px;
 left: 146px;
-top: 601px;
+top: auto; /*Modifique esto para que se vaya abajo de los productos usados*/
 
 font-family: 'Inter';
 font-style: normal;
@@ -414,7 +414,7 @@ text-decoration-line: none;
 color: rgba(47, 199, 47, 0.87); 
 }
 .prod_uso{
-position: absolute;
+position: relative;/*lo cambie a relative para que se quede quieto*/
 width: 373px;
 height: 39px;
 left: 1px;
@@ -481,3 +481,81 @@ color: #FFFFFF;
   font-weight: 700;
   color: white;
 }
+
+.scroll_list{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.box{
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  width: 85%;
+  height: 100px;
+  margin: 10px;
+  border-radius: 10px;
+  transform: translateX(400%);
+  transition: transform 0.8s ease;
+  background-color: #b4ff9a;
+}
+.box:nth-of-type(even){
+  transform: translateX(-400%);
+}
+.box.show{
+  transform: translateX(0);
+  border: #fff solid 1px;
+  box-shadow: -5px 5px 5px 0px rgba(255,255,255,0.75);
+}
+.box>h2{
+  font-size: 20px;
+  color: #000000;
+  text-align: left;
+  font-weight: 500;
+  font-family: 'Inter';
+}
+.box>img{
+  height: 50px;
+  width: 50px;
+  margin: 0 25px 0 20px;
+}
+.box>p{
+  font-size: 15px;
+  color: #000000;
+  text-align: left;
+}
+
+.box>#clock_wrapper {
+  position: absolute;
+  top: 1em;
+  left: 2em;
+}
+
+.box>#clock {
+  position: relative;
+  z-index: 1;
+  width: 300px;
+  height: 300px;
+}
+
+.box>#timer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 800%;
+  text-align: center;
+  width: 300px;
+  z-index: 2;
+  padding-top: 25%;
+  color: #000;
+  transition: opacity 350ms linear 0s;
+  -webkit-transition: opacity 350ms linear 0s;
+}
+/* 
+.half_opacity {
+  opacity:0.5;
+} */
