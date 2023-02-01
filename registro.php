@@ -16,9 +16,26 @@ if (isset($_POST['btnentrar']) == 'entrar') {
     $curp = $_POST['txtcurp'];
     $cuatri = $_POST['txtcuatri'];
 
-    $obj->Ejecutar_Instruccion("call insertar_usuario ($matricula, '$nombre', '$ap_pat', '$ap_mat', $carrera, $telefono, '$contra', '$curp', $cuatri)");
+    // Generar una nueva sal
+    $salt = bin2hex(random_bytes(22));
+    // Aplicar la sal a la contraseña
+    $salted = $salt . $contra;
+    // Hashear la contraseña con la sal
+    $hashed = hash('sha256', $salted);
+
+    $obj->Ejecutar_Instruccion("call insertar_usuario ($matricula, '$nombre', '$ap_pat', '$ap_mat', $carrera, $telefono, '$hashed', '$curp', $cuatri)");
+
+    //Token
+    $id_usuario = $obj->Ejecutar_Instruccion("select matricula from tbl_usuario where contraseña = '$hashed'");
+    $id_usua = $id_usuario [0][0];
+    $token = $id_usuario [0][0].bin2hex(openssl_random_pseudo_bytes(16));
+    $_SESSION['token'] = $token;
+    $token_final = password_hash($token, PASSWORD_DEFAULT);
+
+    $obj->Ejecutar_Instruccion("update tbl_usuario set token = '$token_final' where matricula = '$id_usua'");
 
     echo '<script>alert("Se ha registrado correctamente");</script>';
+    header('Location: ventana_em.php');
 }
 ?>
 
