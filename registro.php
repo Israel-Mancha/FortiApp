@@ -22,6 +22,7 @@ if (isset($_POST['btnentrar']) == 'entrar') {
     $salted = $salt . $contra;
     // Hashear la contraseña con la sal
     $hashed = hash('sha256', $salted);
+    $_SESSION['contra'] = $hashed;
 
     $obj->Ejecutar_Instruccion("call insertar_usuario ($matricula, '$nombre', '$ap_pat', '$ap_mat', $carrera, $telefono, '$hashed', '$curp', $cuatri)");
 

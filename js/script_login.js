@@ -55,9 +55,9 @@ function validar() {
         alert('Por favor llene todos los campos');
         return false;
     }
-    if ($('#txtcontra').val() != $('#txtmatricula').val()) {
+    /*if ($('#txtcontra').val() != $('#txtmatricula').val()) {
         alert("Usuario no encontrado");
         return false;
-    }
+    }*/
 }
 /*-------------VALIDACION DE CAMPOS VACIOS-------------- */
