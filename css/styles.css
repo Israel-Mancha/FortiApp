@@ -370,12 +370,10 @@ border-radius: 10px;
     position: absolute;
 }
 .btnvolver{
-position: relative; /*Cambie a relative pq si*/
-width: 83px;
+position: absolute; 
+width: 100%;
 height: 24px;
-left: 146px;
-top: auto; /*Modifique esto para que se vaya abajo de los productos usados*/
-
+top: 90%;
 font-family: 'Inter';
 font-style: normal;
 font-weight: 900;
@@ -386,6 +384,23 @@ text-decoration-line: underline;
 
 color: rgba(255, 255, 255, 0.87);
 }
+.btnvolver2{
+  position: relative; /*Cambie a relative pq si*/
+  width: 83px;
+  height: 24px;
+  left: 146px;
+  top: auto; /*Modifique esto para que se vaya abajo de los productos usados*/
+  
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  text-decoration-line: underline;
+  
+  color: rgba(255, 255, 255, 0.87);
+  }
 .Rectangle17{
  position: absolute;
 width: 143px;
