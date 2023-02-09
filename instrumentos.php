@@ -58,15 +58,17 @@ error_reporting(0);
         </section> 
         
     
-    <div>
+    
         <div>
-            <a class="ver_todo" href="prod_usados.php">VER TODO</a>
-         <div class="Rectangle17"></div>
+            
+            <div class="Rectangle17">
+              <a class="ver_todo" href="prod_usados.php">VER TODO</a>  
+            </div>
         </div>
         
          
         <a class="btnvolver" href="selecciona_cat.php">VOLVER</a>
-    </div>
+    
         
     
     
