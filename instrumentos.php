@@ -59,8 +59,12 @@ error_reporting(0);
         
     
     <div>
-        <a class="ver_todo" href="prod_usados.php">VER TODO</a>
+        <div>
+            <a class="ver_todo" href="prod_usados.php">VER TODO</a>
          <div class="Rectangle17"></div>
+        </div>
+        
+         
         <a class="btnvolver" href="selecciona_cat.php">VOLVER</a>
     </div>
         
