@@ -31,7 +31,7 @@ $instrumentos = $obj ->Ejecutar_Instruccion("SELECT nombre, img FROM tbl_product
             <?php foreach($instrumentos as $renglon) { ?>
                 <div class="card">
                     <!--<img src=img/guitar.png alt="guitar">-->
-                    <img <?php echo "src=img/". $renglon[1];?> alt="guitar">
+                    <img <?php echo "src=img/". $renglon[1]. "alt=".$renglon[0];?>>
                     <p><?php echo $renglon[0]; ?></p>
                 </div>
             <?php } ?>
