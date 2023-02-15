@@ -32,7 +32,7 @@ if (isset($_POST['btnOK']) == 'OK') {
         <button class="box"><img src="img/casaca.png" alt="Casaca"><h2>Miguel Tienda<br>TIADSM 5B</h2></button>
     </div>
     <div>
-    <a class="btnvolver" href="selecciona_cat.php">VOLVER</a>
+    <a class="btnvolver2" href="selecciona_cat.php">VOLVER</a>
     </div>
     <script src="js/scroll_list.js"></script>
 </body>
