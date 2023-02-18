@@ -98,8 +98,8 @@ error_reporting(0);
             console.log(cards);
         });
         // $(document).on('click', '.card', function(){
-
-        }
+            
+        // }
         $.ajax({
             type: "post",
             url: "insertar.php",
