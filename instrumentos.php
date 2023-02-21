@@ -62,7 +62,10 @@ error_reporting(0);
         <div>
             
             <div class="Rectangle17">
-              <a class="ver_todo" href="prod_usados.php">VER TODO</a>  
+              <a class="ver_todo" id="ver_todo" href="prod_usados.php">VER TODO</a>  
+            </div>
+            <div class="Rectangle17" style="display:none">
+              <a class="ver_todo" id="confirmar" href="#">CONFIRMAR</a>  
             </div>
         </div>
         
@@ -76,8 +79,34 @@ error_reporting(0);
 
 <script>
         $(document).on('click', '.card', function(){
-            $('.card').removeClass('active');
+            if($(this).hasClass('active')){
+                $(this).removeClass('active');
+            }
+            else{
+             $('.card').removeClass('active');
             $(this).addClass('active','');
+            }
+            let cards = $('.card.active').length; 
+            if(cards > 0){
+                $('#confirmar').parent().show();
+                $('#ver_todo').parent().hide();
+            }
+            else{
+                $('#confirmar').parent().hide();
+                $('#ver_todo').parent().show();
+            }
+            console.log(cards);
+        });
+        // $(document).on('click', '.card', function(){
+            
+        // }
+        $.ajax({
+            type: "post",
+            url: "insertar.php",
+            data: "id=1",
+            success: function (response) {
+                
+            }
         });
         
         /*const confirmar = document.querySelector('.ver_todo');
