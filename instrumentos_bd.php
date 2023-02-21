@@ -30,15 +30,15 @@ $instrumentos = $obj ->Ejecutar_Instruccion("SELECT nombre, img FROM tbl_product
         <section class='FlexContainer'>
             <?php foreach($instrumentos as $renglon) { ?>
                 <div class="card">
-                    <!--<img src=img/guitar.png alt="guitar">-->
-                    <img <?php echo "src=img/". $renglon[1]. "alt=".$renglon[0];?>>
+                    <img <?php echo "src=img/". $renglon[1]." alt=".$renglon[0]; ?>>
                     <p><?php echo $renglon[0]; ?></p>
                 </div>
             <?php } ?>
         </section> 
     <div>
-        <a class="ver_todo" href="prod_usados.php">VER TODO</a>
-         <div class="Rectangle17"></div>
+        <div class="Rectangle17">
+            <a class="ver_todo" href="prod_usados.php">VER TODO</a>
+        </div>
         <a class="btnvolver" href="selecciona_cat.php">VOLVER</a>
     </div>
         
