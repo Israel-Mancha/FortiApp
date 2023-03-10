@@ -42,21 +42,57 @@ error_reporting(0);
             <div></div>
         </section>
     
-    <div>
-        <a class="ver_todo" href="prod_usados.php">VER TODO</a>
-         <div class="Rectangle17"></div>
+        <div>
+            
+            <div class="Rectangle17">
+              <a class="ver_todo" id="ver_todo" href="prod_usados.php">VER TODO</a>  
+            </div>
+            <div class="Rectangle_conf" style="display:none">
+              <a class="confirmar" id="confirmar" href="#">CONFIRMAR</a>  
+            </div>
+        </div>
+        
+         
         <a class="btnvolver" href="selecciona_cat.php">VOLVER</a>
-    </div>
         
     
     
 </body>
 <script>
         $(document).on('click', '.card', function(){
-            
-            $('.card').removeClass('active');
+            if($(this).hasClass('active')){
+                $(this).removeClass('active');
+            }
+            else{
+             $('.card').removeClass('active');
             $(this).addClass('active','');
+            }
+            let cards = $('.card.active').length; 
+            if(cards > 0){
+                $('#confirmar').parent().show();
+                $('#ver_todo').parent().hide();
+            }
+            else{
+                $('#confirmar').parent().hide();
+                $('#ver_todo').parent().show();
+            }
+            console.log(cards);
+        });
+        // $(document).on('click', '.card', function(){
+            
+        // }
+        $.ajax({
+            type: "post",
+            url: "insertar.php",
+            data: "id=1",
+            success: function (response) {
+                
+            }
         });
         
+        /*const confirmar = document.querySelector('.ver_todo');
+        function(confirmar){
+            texto.style.color = "blue";
+        }*/
 </script>
 </html>

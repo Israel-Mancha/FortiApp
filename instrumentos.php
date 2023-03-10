@@ -64,8 +64,8 @@ error_reporting(0);
             <div class="Rectangle17">
               <a class="ver_todo" id="ver_todo" href="prod_usados.php">VER TODO</a>  
             </div>
-            <div class="Rectangle17" style="display:none">
-              <a class="ver_todo" id="confirmar" href="#">CONFIRMAR</a>  
+            <div class="Rectangle_conf" style="display:none">
+              <a class="confirmar" id="confirmar" href="#">CONFIRMAR</a>  
             </div>
         </div>
         
