@@ -28,26 +28,60 @@ $instrumentos = $obj ->Ejecutar_Instruccion("SELECT nombre, img FROM tbl_product
 
     <div class="titulo">¡Selecciona!</div>
         <section class='FlexContainer'>
-            <?php foreach($instrumentos as $renglon) { ?>
+            <?php foreach($instrumentos as $renglon) {?>
                 <div class="card">
                     <img <?php echo "src=img/". $renglon[1]." alt=".$renglon[0]; ?>>
                     <p><?php echo $renglon[0]; ?></p>
                 </div>
-            <?php } ?>
+            <?php }?>
         </section> 
-    <div>
-        <div class="Rectangle17">
-            <a class="ver_todo" href="prod_usados.php">VER TODO</a>
+        <div>
+            
+            <div class="Rectangle17">
+              <a class="ver_todo" id="ver_todo" href="prod_usados.php">VER TODO</a>  
+            </div>
+            <div class="Rectangle_conf" style="display:none">
+              <a class="confirmar" id="confirmar" href="#">CONFIRMAR</a>
+                
+            </div>
+           <a class="btnvolver" href="selecciona_cat.php">VOLVER</a> 
         </div>
-        <a class="btnvolver" href="selecciona_cat.php">VOLVER</a>
-    </div>
+        
+         
+        
         
 </body>
 
 <script>
         $(document).on('click', '.card', function(){
-            $('.card').removeClass('active');
+            if($(this).hasClass('active')){
+                $(this).removeClass('active');
+            }
+            else{
+             $('.card').removeClass('active');
             $(this).addClass('active','');
+            }
+            let cards = $('.card.active').length; 
+            if(cards > 0){
+                $('#confirmar').parent().show();
+                $('#ver_todo').parent().hide();
+            }
+            else{
+                $('#confirmar').parent().hide();
+                $('#ver_todo').parent().show();
+            }
+            console.log(cards);
+        });
+        // $(document).on('click', '.card', function(){
+            
+        // }
+        $.ajax({
+            type: "post",
+            url: "insertar.php",
+            data: "id=1",
+            success: function (response) {
+                
+            }
         });
         
         /*const confirmar = document.querySelector('.ver_todo');
