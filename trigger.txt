@@ -1,0 +1,5 @@
+Detalle con id usuario y id producto
+campo estado no es necesario
+trigger = al insertar en detalle con el tipo en reserva actualizar
+la tabla producto y restar cantidad -1, si por el contrario es 
+reserva sumar +1.
