@@ -7,7 +7,7 @@ $obj = new BD_POO();
 $productos = $obj->Ejecutar_Instruccion
     ("SELECT CONCAT(tbl_usuario.nombres, ' ',tbl_usuario.ap_pat) AS Alumno, CONCAT(tbl_carrera.nombre, ' ',tbl_usuario.cuatrimestre) AS Carrera
     FROM tbl_usuario INNER JOIN tbl_carrera 
-    ON tbl_usuario.carrera = tbl_carrera.ID_carrera WHERE tbl_usuario.estado = 0");
+    ON tbl_usuario.carrera = tbl_carrera.ID_carrera");
 
 ?>
 <!DOCTYPE html>
