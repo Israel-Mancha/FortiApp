@@ -4,7 +4,8 @@ error_reporting(0);
 require 'bd.php';
 $obj = new BD_POO();
 
-$instrumentos = $obj ->Ejecutar_Instruccion("SELECT nombre, img FROM tbl_productos WHERE ID_cat=1");
+$instrumentos = $obj ->Ejecutar_Instruccion("SELECT nombre, img FROM tbl_productos WHERE ID_cat=1 AND cantidad > 0");
+
 
 ?>
 
@@ -36,15 +37,13 @@ $instrumentos = $obj ->Ejecutar_Instruccion("SELECT nombre, img FROM tbl_product
             <?php }?>
         </section> 
         <div>
-            
             <div class="Rectangle17">
-              <a class="ver_todo" id="ver_todo" href="prod_usados.php">VER TODO</a>  
+                <a class="ver_todo" id="ver_todo" href="prod_usados.php">VER TODO</a>  
             </div>
             <div class="Rectangle_conf" style="display:none">
-              <a class="confirmar" id="confirmar" href="#">CONFIRMAR</a>
-                
+                <a class="confirmar" id="confirmar" name="confirmar" href="#">CONFIRMAR</a>
             </div>
-           <a class="btnvolver" href="selecciona_cat.php">VOLVER</a> 
+            <a class="btnvolver" href="selecciona_cat.php">VOLVER</a> 
         </div>
         
          

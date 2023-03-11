@@ -3,3 +3,10 @@ campo estado no es necesario
 trigger = al insertar en detalle con el tipo en reserva actualizar
 la tabla producto y restar cantidad -1, si por el contrario es 
 reserva sumar +1.
+
+Tengo una tabla que me permite saber todos los alumnos que han reservado al menos una vez un producto, pero, necesito saber los alumnos 
+que tienen un producto en su posesion.
+Opcion 1:
+    - Añadir un campo status a la tabla alumno. Si un alumno reserva un producto, el status cambiara a 1 y ya no le 
+    permitira reservar mas productos hasta que entregue el que tenga en posesion. 
+    Esto me permitira hacer un SELECT de todos los alumnos con status 1(los que tienen un producto) en el archivo 'prod_usados_bd.php'.
