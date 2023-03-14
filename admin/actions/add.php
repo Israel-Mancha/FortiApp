@@ -81,7 +81,8 @@ $obj->Ejecutar_Instruccion("insert into tbl_productos (nombre, img, ID_cat, cant
                 </div>
 
                 <div class="form-group">
-                    <div class="input-group-append">
+                    <label for="archivo">Imagen:</label>
+                    <div class="input-group">
                         <label for="archivo" class="custom-file-upload">
                             Subir Imagen
                         </label>
@@ -93,7 +94,7 @@ $obj->Ejecutar_Instruccion("insert into tbl_productos (nombre, img, ID_cat, cant
                 <div class="form-group">
                     <label for="categoria">Categoría:</label>
                     <div class="input-group">
-                        <select class="form-control" name="categoria" id="categoria">
+                        <select class="form-control" name="categoria" id="categoria" style="padding-bottom: 5px; padding-top: 5px;">
                             <option value="" selected disabled>Selecciona</option>
                             <option value="2">Deportivo</option>
                             <option value="3">Cultural</option>
@@ -104,8 +105,8 @@ $obj->Ejecutar_Instruccion("insert into tbl_productos (nombre, img, ID_cat, cant
 
                 <div class="form-group">
                     <label for="cant">Cantidad:</label>
-                    <div class="">
-                        <input class="form-control" id="cant" name="cant" type="text" placeholder="Cantidad">
+                    <div class="input-group">
+                        <input class="form-control" id="cant" name="cant" type="number" value="1" min="1">
                     </div>
                 </div>
 
