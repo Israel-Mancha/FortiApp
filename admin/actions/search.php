@@ -3,10 +3,7 @@
 $diassemana = array("Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sábado");
 $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
 
-?>
-
-<?php
-require 'bd.php';
+require '../database/bd.php';
 
 $obj = new BD_PDO();
 
@@ -52,6 +49,18 @@ $select_user = $obj->Ejecutar_Instruccion("select nombres, ap_pat from tbl_usuar
             color: white;
         }
     </style>
+    <script>
+        function eliminar(id_producto) {
+            if (confirm("¿Está seguro de que desea eliminar este producto?")) {
+                window.location.href = "delete.php?id=" + id_producto;
+            }
+        }
+
+        function modificar(id_producto) {
+            window.location.href = "update.php?id=" + id_producto;
+        }
+    </script>
+
 </head>
 
 <body>
@@ -81,12 +90,13 @@ $select_user = $obj->Ejecutar_Instruccion("select nombres, ap_pat from tbl_usuar
             <div>Buscar producto</div>
             <div><?php echo $diassemana[date('w')] . " " . date('d') . " de " . $meses[date('n') - 1] . " del " . date('Y'); ?></div>
         </div>
-        <div class="products-status">
-            <h1>Buscar en la base de datos</h1>
-            <form action="search.php" method="post">
-                <label for="busqueda">Buscar:</label>
-                <input type="text" name="busqueda" id="busqueda">
-                <input type="submit" value="Buscar">
+        <div class="products-status-1">
+            <form action="search.php" class="frm-search" method="post">
+                <label class="label-search" for="busqueda">Buscar:</label>
+                <div>
+                  <input class="form-control" type="text" name="busqueda" id="busqueda">  
+                </div>
+                <input class="btn-search" type="submit" value="Buscar">
             </form>
             <h1>Resultados de búsqueda</h1>
             <?php
@@ -101,7 +111,7 @@ $select_user = $obj->Ejecutar_Instruccion("select nombres, ap_pat from tbl_usuar
             // Mostrar los resultados en una tabla
             if (mysqli_num_rows($resultado) > 0) {
                 echo "<table>";
-                echo "<tr><th>ID</th><th>Nombre</th><th>Categoria</th><th>Cantidad</th><th>Estado</th></tr>";
+                echo "<tr><th>ID</th><th>Nombre</th><th>Categoria</th><th>Cantidad</th><th>Estado</th><th>Accion</th></tr>";
                 while ($fila = mysqli_fetch_assoc($resultado)) {
                     if ($fila['ID_cat'] == 1) {
                         $fila['ID_cat'] = 'Instrumento';
@@ -120,6 +130,10 @@ $select_user = $obj->Ejecutar_Instruccion("select nombres, ap_pat from tbl_usuar
                     echo "<td>" . $fila['ID_cat'] . "</td>";
                     echo "<td>" . $fila['cantidad'] . "</td>";
                     echo "<td>" . $fila['estado'] . "</td>";
+                    echo "<td>";
+                    echo "<button onclick='eliminar(" . $fila['ID_producto'] . ")'>Eliminar</button>";
+                    echo "<button onclick='modificar(" . $fila['ID_producto'] . ")'>Modificar</button>";
+                    echo "</td>";
                     echo "</tr>";
                 }
                 echo "</table>";
@@ -133,8 +147,6 @@ $select_user = $obj->Ejecutar_Instruccion("select nombres, ap_pat from tbl_usuar
         </div>
     </main>
 
-
-    <script src="../js/main.js"></script>
 </body>
 
 </html>
