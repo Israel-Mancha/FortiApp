@@ -59,7 +59,8 @@
         </div>
         <div class="products-status">
             <div class="item-status">
-                <span class="status-number">6</span>
+            <!-- no es tan necesario, pero en caso de ponerlo sí traerlo desde la BD -->
+                <span class="status-number">6</span> 
                 <span class="status-type">En uso</span>
             </div>
             <div class="item-status">

@@ -1,7 +1,9 @@
 ::placeholder, input{
   padding-left: 10px;
 }
-
+button{
+  border: 0;
+}
 .logo_formulario{
     max-width: 25%;
     margin-left: 40%;
@@ -70,6 +72,9 @@ background: #FFFFFF;
 border-radius: 12px; 
 }
 .registrado{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   width: 200px;
   height: 46px;
@@ -78,7 +83,7 @@ border-radius: 12px;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
-  font-size: 25px;
+  font-size: 23px;
   line-height: 29px;
   text-align: center;
   color: #000000;

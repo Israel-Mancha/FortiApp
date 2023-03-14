@@ -6,7 +6,7 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
 ?>
 
 <?php
-require 'bd.php';
+require '../database/bd.php';
 
 $obj = new BD_PDO();
 

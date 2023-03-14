@@ -1,4 +1,6 @@
 <?php
+session_start();
+$id_usuario = $_SESSION['usuario'];
 error_reporting(0);
 
 require 'bd.php';
@@ -40,9 +42,12 @@ $instrumentos = $obj ->Ejecutar_Instruccion("SELECT nombre, img FROM tbl_product
             <div class="Rectangle17">
                 <a class="ver_todo" id="ver_todo" href="prod_usados.php">VER TODO</a>  
             </div>
-            <div class="Rectangle_conf" style="display:none">
-                <a class="confirmar" id="confirmar" name="confirmar" href="#">CONFIRMAR</a>
-            </div>
+            <form method="post">
+              <div class="Rectangle_conf" style="display:none">
+                <a class="confirmar" id="confirmar" name="confirmar" href="ventana_emergente.php">CONFIRMAR</a>
+            </div>  
+            </form>
+            
             <a class="btnvolver" href="selecciona_cat.php">VOLVER</a> 
         </div>
         
@@ -51,7 +56,7 @@ $instrumentos = $obj ->Ejecutar_Instruccion("SELECT nombre, img FROM tbl_product
         
 </body>
 
-<script>
+<script>            
         $(document).on('click', '.card', function(){
             if($(this).hasClass('active')){
                 $(this).removeClass('active');
