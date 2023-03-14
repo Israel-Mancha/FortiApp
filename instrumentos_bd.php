@@ -6,7 +6,7 @@ error_reporting(0);
 require 'bd.php';
 $obj = new BD_POO();
 
-$instrumentos = $obj ->Ejecutar_Instruccion("SELECT nombre, img FROM tbl_productos WHERE ID_cat=1 AND cantidad > 0");
+$instrumentos = $obj ->Ejecutar_Instruccion("SELECT nombre, img, ID_producto FROM tbl_productos WHERE ID_cat=1 AND cantidad > 0");
 
 
 ?>
@@ -32,7 +32,7 @@ $instrumentos = $obj ->Ejecutar_Instruccion("SELECT nombre, img FROM tbl_product
     <div class="titulo">¡Selecciona!</div>
         <section class='FlexContainer'>
             <?php foreach($instrumentos as $renglon) {?>
-                <div class="card">
+                <div class="card" <?php echo "data-id=". $renglon[2]?>>
                     <img <?php echo "src=img/". $renglon[1]." alt=".$renglon[0]; ?>>
                     <p><?php echo $renglon[0]; ?></p>
                 </div>
@@ -44,7 +44,7 @@ $instrumentos = $obj ->Ejecutar_Instruccion("SELECT nombre, img FROM tbl_product
             </div>
             <form method="post">
               <div class="Rectangle_conf" style="display:none">
-                <a class="confirmar" id="confirmar" name="confirmar" href="ventana_emergente.php">CONFIRMAR</a>
+                <a class="confirmar" id="confirmar" name="confirmar" href="#">CONFIRMAR</a>
             </div>  
             </form>
             
@@ -56,7 +56,20 @@ $instrumentos = $obj ->Ejecutar_Instruccion("SELECT nombre, img FROM tbl_product
         
 </body>
 
-<script>            
+<script> 
+        $(document).on('click','#confirmar',function(){
+            let id = $(".card.active").data('id');
+            $.ajax({
+                type: "post",
+                url: "insertar_detalle.php",
+                data: "id=" + id,
+                success: function (response) {
+                    
+                    window.location.href="ventana_emergente.php";
+                }
+            });
+        });
+        
         $(document).on('click', '.card', function(){
             if($(this).hasClass('active')){
                 $(this).removeClass('active');
@@ -74,24 +87,8 @@ $instrumentos = $obj ->Ejecutar_Instruccion("SELECT nombre, img FROM tbl_product
                 $('#confirmar').parent().hide();
                 $('#ver_todo').parent().show();
             }
-            console.log(cards);
-        });
-        // $(document).on('click', '.card', function(){
             
-        // }
-        $.ajax({
-            type: "post",
-            url: "insertar.php",
-            data: "id=1",
-            success: function (response) {
-                
-            }
         });
-        
-        /*const confirmar = document.querySelector('.ver_todo');
-        function(confirmar){
-            texto.style.color = "blue";
-        }*/
 </script>
 
 </html>

@@ -4,7 +4,7 @@ error_reporting(0);
 require 'bd.php';
 $obj = new BD_POO();
 
-$culturales = $obj ->Ejecutar_Instruccion("SELECT nombre, img FROM tbl_productos WHERE ID_cat=3");
+$culturales = $obj ->Ejecutar_Instruccion("SELECT nombre, img, ID_producto FROM tbl_productos WHERE ID_cat=3");
 
 ?>
 
@@ -29,7 +29,7 @@ $culturales = $obj ->Ejecutar_Instruccion("SELECT nombre, img FROM tbl_productos
     <div class="titulo">¡Selecciona!</div>
         <section class='FlexContainer'>
             <?php foreach($culturales as $renglon) {?>
-                <div class="card">
+                <div class="card" <?php echo "data-id=". $renglon[2]?>>
                     <img <?php echo "src=img/". $renglon[1]." alt=".$renglon[0]; ?>>
                     <p><?php echo $renglon[0]; ?></p>
                 </div>
@@ -53,6 +53,19 @@ $culturales = $obj ->Ejecutar_Instruccion("SELECT nombre, img FROM tbl_productos
 </body>
 
 <script>
+        $(document).on('click','#confirmar',function(){
+            let id = $(".card.active").data('id');
+            $.ajax({
+                type: "post",
+                url: "insertar_detalle.php",
+                data: "id=" + id,
+                success: function (response) {
+                    
+                    window.location.href="ventana_emergente.php";
+                }
+            });
+        });
+
         $(document).on('click', '.card', function(){
             if($(this).hasClass('active')){
                 $(this).removeClass('active');

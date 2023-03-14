@@ -76,19 +76,11 @@ error_reporting(0);
                 $('#confirmar').parent().hide();
                 $('#ver_todo').parent().show();
             }
-            console.log(cards);
+            
         });
         // $(document).on('click', '.card', function(){
             
         // }
-        $.ajax({
-            type: "post",
-            url: "insertar.php",
-            data: "id=1",
-            success: function (response) {
-                
-            }
-        });
         
         /*const confirmar = document.querySelector('.ver_todo');
         function(confirmar){

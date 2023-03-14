@@ -12,6 +12,7 @@ if (isset($_POST['btnentrar']) == 'entrar') {
     if ($usuario[0][0]>0) {
         //Verifica que el usuario exista
         $_SESSION['usuario'] = $usuario[0][1];
+        $_SESSION['matricula'] = $usuario[0][0];
         header('Location: ventana_em.php');
     }/*else {
         # code...

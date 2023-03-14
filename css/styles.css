@@ -482,7 +482,8 @@ border-radius: 50px;
 }
 
 .FlexContainer div {
-  border-radius: 10px;
+    border-radius: 10px;
+    max-width: 100px;
     width: 25%;
     height: 95px;
     margin: 13px;
@@ -490,6 +491,7 @@ border-radius: 50px;
 }
 .FlexContainer div img {
     position: relative;
+    object-fit: contain;
     border-radius: 10px;
     background-color: #FFFFFF;
     width: 100%;
