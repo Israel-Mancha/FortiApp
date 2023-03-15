@@ -8,6 +8,8 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
 <?php
 require '../database/bd.php';
 
+date_default_timezone_set("America/Mexico_City");
+
 $obj = new BD_PDO();
 
 $result = $obj->Ejecutar_Instruccion("select nombres, apellidoP from tbl_admin LIMIT 1");

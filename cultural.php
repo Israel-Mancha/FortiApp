@@ -4,7 +4,7 @@ error_reporting(0);
 require 'bd.php';
 $obj = new BD_POO();
 
-$culturales = $obj ->Ejecutar_Instruccion("SELECT nombre, img, ID_producto FROM tbl_productos WHERE ID_cat=3");
+$culturales = $obj ->Ejecutar_Instruccion("SELECT nombre, img, ID_producto FROM tbl_productos WHERE ID_cat=3 AND cantidad > 0");
 
 ?>
 
@@ -53,6 +53,8 @@ $culturales = $obj ->Ejecutar_Instruccion("SELECT nombre, img, ID_producto FROM 
 </body>
 
 <script>
+        
+
         $(document).on('click','#confirmar',function(){
             let id = $(".card.active").data('id');
             $.ajax({

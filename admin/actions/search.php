@@ -111,7 +111,7 @@ $select_user = $obj->Ejecutar_Instruccion("select nombres, ap_pat from tbl_usuar
             // Mostrar los resultados en una tabla
             if (mysqli_num_rows($resultado) > 0) {
                 echo "<table>";
-                echo "<tr><th>ID</th><th>Nombre</th><th>Categoria</th><th>Cantidad</th><th>Estado</th><th>Accion</th></tr>";
+                echo "<tr><th>ID</th><th>Nombre</th><th>Categoría</th><th>Cantidad</th><th>Acción</th></tr>";
                 while ($fila = mysqli_fetch_assoc($resultado)) {
                     if ($fila['ID_cat'] == 1) {
                         $fila['ID_cat'] = 'Instrumento';
@@ -129,7 +129,7 @@ $select_user = $obj->Ejecutar_Instruccion("select nombres, ap_pat from tbl_usuar
                     echo "<td>" . $fila['nombre'] . "</td>";
                     echo "<td>" . $fila['ID_cat'] . "</td>";
                     echo "<td>" . $fila['cantidad'] . "</td>";
-                    echo "<td>" . $fila['estado'] . "</td>";
+                    // echo "<td>" . $fila['estado'] . "</td>";
                     echo "<td>";
                     echo "<button onclick='eliminar(" . $fila['ID_producto'] . ")'>Eliminar</button>";
                     echo "<button onclick='modificar(" . $fila['ID_producto'] . ")'>Modificar</button>";

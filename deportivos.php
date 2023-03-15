@@ -4,7 +4,7 @@ error_reporting(0);
 require 'bd.php';
 $obj = new BD_POO();
 
-$deportivos = $obj ->Ejecutar_Instruccion("SELECT nombre, img, ID_producto FROM tbl_productos WHERE ID_cat=2");
+$deportivos = $obj ->Ejecutar_Instruccion("SELECT nombre, img, ID_producto FROM tbl_productos WHERE ID_cat=2 AND cantidad > 0");
 
 ?>
 
