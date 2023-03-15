@@ -1,14 +1,20 @@
 <?php
 error_reporting(0);
 
+require 'bd.php';
+$obj = new BD_POO();
+
+$deportivos = $obj ->Ejecutar_Instruccion("SELECT nombre, img, ID_producto FROM tbl_productos WHERE ID_cat=2");
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
@@ -21,51 +27,45 @@ error_reporting(0);
 <body class="fondo">
 
     <div class="titulo">¡Selecciona!</div>
-    <section class='FlexContainer'>
-         
-            <div class="card">
-                <img src="img/volleyball.png" alt="volleyball">
-                <p>Volleybal</p>
-            </div>
-            <div class="card">
-                <img src="img/baloncesto.png" alt="basketball">
-                <p>Basketball</p>
-            </div>
-            <div class="card">
-                <img src="img/balon-fut.png" alt="futbol">
-                <p>Futbol</p>
-            </div>
-            <div class="card">
-                <img src="img/ajedrez.png" alt="ajedrez">
-                <p>Ajedrez</p>
-            </div>
-            <div class="card">
-                <img src="img/casaca.png" alt="casaca">
-                <p>Casacas</p>
-            </div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </section>
-    
+        <section class='FlexContainer'>
+            <?php foreach($deportivos as $renglon) {?>
+                <div class="card" <?php echo "data-id=". $renglon[2]?>>
+                    <img <?php echo "src=img/". $renglon[1]." alt=".$renglon[0]; ?>>
+                    <p><?php echo $renglon[0]; ?></p>
+                </div>
+            <?php }?>
+        </section> 
         <div>
             
             <div class="Rectangle17">
               <a class="ver_todo" id="ver_todo" href="prod_usados.php">VER TODO</a>  
             </div>
             <div class="Rectangle_conf" style="display:none">
-              <a class="confirmar" id="confirmar" href="#">CONFIRMAR</a>  
+              <a class="confirmar" id="confirmar" href="#">CONFIRMAR</a>
+                
             </div>
+           <a class="btnvolver" href="selecciona_cat.php">VOLVER</a> 
         </div>
         
          
-        <a class="btnvolver" href="selecciona_cat.php">VOLVER</a>
         
-    
-    
+        
 </body>
+
 <script>
+        $(document).on('click','#confirmar',function(){
+            let id = $(".card.active").data('id');
+            $.ajax({
+                type: "post",
+                url: "insertar_detalle.php",
+                data: "id=" + id,
+                success: function (response) {
+                    
+                    window.location.href="ventana_emergente.php";
+                }
+            });
+        });
+                
         $(document).on('click', '.card', function(){
             if($(this).hasClass('active')){
                 $(this).removeClass('active');
@@ -102,4 +102,5 @@ error_reporting(0);
             texto.style.color = "blue";
         }*/
 </script>
+
 </html>

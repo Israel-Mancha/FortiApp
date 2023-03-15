@@ -1,5 +1,12 @@
 <?php
+session_start();
+$id_usuario = $_SESSION['usuario'];
 error_reporting(0);
+
+require 'bd.php';
+$obj = new BD_POO();
+
+$instrumentos = $obj ->Ejecutar_Instruccion("SELECT nombre, img, ID_producto FROM tbl_productos WHERE ID_cat=1 AND cantidad > 0");
 
 
 ?>
@@ -23,61 +30,46 @@ error_reporting(0);
 <body class="fondo">
 
     <div class="titulo">¡Selecciona!</div>
-    <section class='FlexContainer'>
-         
-            <div class="card">
-                <img src="img/guitar.png" alt="guitar">
-                <p>Guitarra</p>
-            </div>
-            
-            <div class="card">
-                <img src="img/saxofon.png" alt="saxofon">
-                <p>Saxofón</p>
-            </div>
-            <div class="card">
-                <img src="img/acordeon.png" alt="acordeon">
-                <p>Acordeón</p>
-            </div>
-            <div class="card">
-                <img src="img/contrabajo.png" alt="contrabajo">
-                <p>Contrabajo</p>
-            </div>
-            <div class="card">
-                <img src="img/cajon.png" alt="cajon">
-                <p>Cajón</p>
-            </div>
-            <div class="card">
-                <img src="img/conga.png" alt="congos">
-                <p>Congas</p>
-            </div>
-            <div></div>
-            <div></div>
-            <div></div>
-        
-            
+        <section class='FlexContainer'>
+            <?php foreach($instrumentos as $renglon) {?>
+                <div class="card" <?php echo "data-id=". $renglon[2]?>>
+                    <img <?php echo "src=img/". $renglon[1]." alt=".$renglon[0]; ?>>
+                    <p><?php echo $renglon[0]; ?></p>
+                </div>
+            <?php }?>
         </section> 
-        
-    
-    
         <div>
-            
             <div class="Rectangle17">
-              <a class="ver_todo" id="ver_todo" href="prod_usados.php">VER TODO</a>  
+                <a class="ver_todo" id="ver_todo" href="prod_usados.php">VER TODO</a>  
             </div>
-            <div class="Rectangle_conf" style="display:none">
-              <a class="confirmar" id="confirmar" href="#">CONFIRMAR</a>  
-            </div>
+            <form method="post">
+              <div class="Rectangle_conf" style="display:none">
+                <a class="confirmar" id="confirmar" name="confirmar" href="#">CONFIRMAR</a>
+            </div>  
+            </form>
+            
+            <a class="btnvolver" href="selecciona_cat.php">VOLVER</a> 
         </div>
         
          
-        <a class="btnvolver" href="selecciona_cat.php">VOLVER</a>
-    
         
-    
-    
+        
 </body>
 
-<script>
+<script> 
+        $(document).on('click','#confirmar',function(){
+            let id = $(".card.active").data('id');
+            $.ajax({
+                type: "post",
+                url: "insertar_detalle.php",
+                data: "id=" + id,
+                success: function (response) {
+                    
+                    window.location.href="ventana_emergente.php";
+                }
+            });
+        });
+        
         $(document).on('click', '.card', function(){
             if($(this).hasClass('active')){
                 $(this).removeClass('active');
@@ -95,24 +87,8 @@ error_reporting(0);
                 $('#confirmar').parent().hide();
                 $('#ver_todo').parent().show();
             }
-            console.log(cards);
-        });
-        // $(document).on('click', '.card', function(){
             
-        // }
-        $.ajax({
-            type: "post",
-            url: "insertar.php",
-            data: "id=1",
-            success: function (response) {
-                
-            }
         });
-        
-        /*const confirmar = document.querySelector('.ver_todo');
-        function(confirmar){
-            texto.style.color = "blue";
-        }*/
 </script>
 
 </html>
