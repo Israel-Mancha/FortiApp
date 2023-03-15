@@ -8,7 +8,7 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
 <?php
 require '../database/bd.php';
 
-date_default_timezone_set("America/Mexico_City");
+date_default_timezone_set("America/Matamoros");
 
 $obj = new BD_PDO();
 

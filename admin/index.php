@@ -6,6 +6,9 @@
 ?>
 
 <?php
+
+    date_default_timezone_set("America/Matamoros");
+    
     require 'database/bd.php';
 
     $obj = new BD_PDO();
