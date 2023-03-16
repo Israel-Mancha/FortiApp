@@ -34,6 +34,6 @@ class BD_PDO
 			        $rows[] = $result;
 			    }	
 		}
-		return $rows;
+		return @$rows;
 	}
 }

@@ -57,7 +57,15 @@ $select_user = $obj->Ejecutar_Instruccion("select nombres, ap_pat from tbl_usuar
         }
 
         function modificar(id_producto) {
-            window.location.href = "update.php?id=" + id_producto;
+            <?php 
+            $update = $obj->Ejecutar_Instruccion("SELECT * FROM tbl_productos WHERE ID_producto = '$id_producto'");
+            foreach ($update as $modificar) {
+                # code...
+                //echo "<srcipt>window.location.href = 'update.php?id=' + id_producto;</script>";
+                echo "<srcipt>window.location.href = 'update.php?id=".$modificar[0][0].",nombre=".$modificar[0][0].",categoria=";
+            } 
+            ?>
+            
         }
     </script>
 
