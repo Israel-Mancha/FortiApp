@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 10, 2023 at 03:31 PM
+-- Generation Time: Mar 16, 2023 at 06:01 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -31,6 +31,26 @@ VALUES (matricula, nombres, ap_pat, ap_mat, carrera, telefono, contraseÃ±a, cu
 END$$
 
 DELIMITER ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_admin`
+--
+
+CREATE TABLE `tbl_admin` (
+  `idAdmin` bigint(20) NOT NULL,
+  `nombres` varchar(255) NOT NULL,
+  `apellidoP` varchar(255) NOT NULL,
+  `apellidoM` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_admin`
+--
+
+INSERT INTO `tbl_admin` (`idAdmin`, `nombres`, `apellidoP`, `apellidoM`) VALUES
+(1, 'Fortino', 'Martínez', 'Catarina');
 
 -- --------------------------------------------------------
 
@@ -78,28 +98,39 @@ INSERT INTO `tbl_categoria` (`ID_categoria`, `nombre`) VALUES
 
 CREATE TABLE `tbl_detalle` (
   `ID_detalle` int(11) NOT NULL,
-  `estado` tinyint(1) DEFAULT NULL
+  `id_producto` int(20) NOT NULL,
+  `id_usuario` bigint(20) NOT NULL,
+  `fecha_reserva` date NOT NULL,
+  `activo` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_detalle`
 --
 
-INSERT INTO `tbl_detalle` (`ID_detalle`, `estado`) VALUES
-(1, 1),
-(2, 1),
-(3, 1),
-(4, 1),
-(5, 1),
-(6, 1),
-(7, 1),
-(8, 1),
-(9, 1),
-(10, 1),
-(11, 1),
-(12, 1),
-(13, 1),
-(14, 1);
+INSERT INTO `tbl_detalle` (`ID_detalle`, `id_producto`, `id_usuario`, `fecha_reserva`, `activo`) VALUES
+(26, 1, 21005265, '2023-03-15', 1),
+(27, 5, 21005265, '2023-03-15', 1),
+(28, 8, 21005265, '2023-03-15', 1),
+(29, 8, 21005265, '2023-03-15', 1),
+(30, 8, 21005265, '2023-03-15', 1),
+(31, 8, 21005265, '2023-03-15', 1),
+(32, 8, 21005265, '2023-03-16', 1),
+(33, 1, 21005265, '2023-03-16', 1),
+(34, 2, 21005265, '2023-03-16', 1),
+(35, 2, 21005265, '2023-03-16', 1),
+(36, 2, 21005265, '2023-03-16', 1),
+(37, 2, 21005252, '2023-03-16', 1);
+
+--
+-- Triggers `tbl_detalle`
+--
+DELIMITER $$
+CREATE TRIGGER `cambiar_estado` AFTER INSERT ON `tbl_detalle` FOR EACH ROW BEGIN
+  UPDATE tbl_productos SET cantidad=cantidad-1 WHERE tbl_productos.ID_producto=NEW.id_producto;
+END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -112,44 +143,28 @@ CREATE TABLE `tbl_productos` (
   `nombre` varchar(100) DEFAULT NULL,
   `img` varchar(255) NOT NULL,
   `ID_cat` int(11) DEFAULT NULL,
-  `cantidad` bigint(20) DEFAULT NULL,
-  `estado` int(11) DEFAULT NULL
+  `cantidad` bigint(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_productos`
 --
 
-INSERT INTO `tbl_productos` (`ID_producto`, `nombre`, `img`, `ID_cat`, `cantidad`, `estado`) VALUES
-(1, 'Guitarra', 'guitar.png', 1, 5, 1),
-(2, 'Saxofón', 'saxofon.png', 1, 6, 2),
-(3, 'Acordeón', 'acordeon.png', 1, 9, 3),
-(4, 'Contrabajo', 'contrabajo.png', 1, 4, 4),
-(5, 'Cajón', 'cajon.png', 1, 6, 5),
-(6, 'Congas', 'conga.png', 1, 6, 6),
-(7, 'Volleyball', 'volleyball.png', 2, 1, 7),
-(8, 'Baskteball', 'baloncesto.png', 2, 10, 8),
-(9, 'Futbol', 'balon-fut.png', 2, 6, 9),
-(10, 'Ajedrez', 'ajedrez.png', 2, 8, 10),
-(11, 'Casacas', 'casaca.png', 2, 10, 11),
-(12, 'Vestuario', 'vestuario.png', 3, 1, 12),
-(13, 'Zapatos', 'zapato.png', 3, 14, 13),
-(14, 'Escolta', 'escolta.png', 3, 12, 14);
-
---
--- Triggers `tbl_productos`
---
-DELIMITER $$
-CREATE TRIGGER `cambiar_estado` AFTER UPDATE ON `tbl_productos` FOR EACH ROW BEGIN
-  IF NEW.cantidad = 0 THEN
-    UPDATE tbl_detalle SET estado = 0 WHERE ID_detalle = NEW.estado;
-  END IF;
-  IF NEW.cantidad > 0 THEN
-    UPDATE tbl_detalle SET estado = 1 WHERE ID_detalle = NEW.estado;
-  END IF;
-END
-$$
-DELIMITER ;
+INSERT INTO `tbl_productos` (`ID_producto`, `nombre`, `img`, `ID_cat`, `cantidad`) VALUES
+(1, 'Guitarra', 'guitar.png', 1, 3),
+(2, 'Saxofón', 'saxofon.png', 1, 7),
+(3, 'Acordeón', 'acordeon.png', 1, 9),
+(4, 'Contrabajo', 'contrabajo.png', 1, 3),
+(5, 'Cajón', 'cajon.png', 1, 5),
+(6, 'Congas', 'conga.png', 1, 4),
+(7, 'Volleyball', 'volleyball.png', 2, 1),
+(8, 'Baskteball', 'baloncesto.png', 2, 5),
+(9, 'Futbol', 'balon-fut.png', 2, 6),
+(10, 'Ajedrez', 'ajedrez.png', 2, 6),
+(11, 'Casacas', 'casaca.png', 2, 10),
+(12, 'Vestuario', 'vestuario.png', 3, 4),
+(13, 'Zapatos', 'zapato.png', 3, 10),
+(14, 'Escolta', 'escolta.png', 3, 11);
 
 -- --------------------------------------------------------
 
@@ -184,6 +199,12 @@ INSERT INTO `tbl_usuario` (`matricula`, `nombres`, `ap_pat`, `ap_mat`, `carrera`
 --
 
 --
+-- Indexes for table `tbl_admin`
+--
+ALTER TABLE `tbl_admin`
+  ADD PRIMARY KEY (`idAdmin`);
+
+--
 -- Indexes for table `tbl_carrera`
 --
 ALTER TABLE `tbl_carrera`
@@ -199,15 +220,15 @@ ALTER TABLE `tbl_categoria`
 -- Indexes for table `tbl_detalle`
 --
 ALTER TABLE `tbl_detalle`
-  ADD PRIMARY KEY (`ID_detalle`);
+  ADD PRIMARY KEY (`ID_detalle`),
+  ADD KEY `id_usuario` (`id_usuario`),
+  ADD KEY `id_producto` (`id_producto`);
 
 --
 -- Indexes for table `tbl_productos`
 --
 ALTER TABLE `tbl_productos`
-  ADD PRIMARY KEY (`ID_producto`),
-  ADD KEY `ID_cat` (`ID_cat`),
-  ADD KEY `estado` (`estado`);
+  ADD PRIMARY KEY (`ID_producto`);
 
 --
 -- Indexes for table `tbl_usuario`
@@ -219,6 +240,12 @@ ALTER TABLE `tbl_usuario`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `tbl_admin`
+--
+ALTER TABLE `tbl_admin`
+  MODIFY `idAdmin` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tbl_carrera`
@@ -236,24 +263,24 @@ ALTER TABLE `tbl_categoria`
 -- AUTO_INCREMENT for table `tbl_detalle`
 --
 ALTER TABLE `tbl_detalle`
-  MODIFY `ID_detalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `ID_detalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `tbl_productos`
 --
 ALTER TABLE `tbl_productos`
-  MODIFY `ID_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `ID_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Constraints for dumped tables
 --
 
 --
--- Constraints for table `tbl_productos`
+-- Constraints for table `tbl_detalle`
 --
-ALTER TABLE `tbl_productos`
-  ADD CONSTRAINT `tbl_productos_ibfk_1` FOREIGN KEY (`ID_cat`) REFERENCES `tbl_categoria` (`ID_categoria`),
-  ADD CONSTRAINT `tbl_productos_ibfk_2` FOREIGN KEY (`estado`) REFERENCES `tbl_detalle` (`ID_detalle`);
+ALTER TABLE `tbl_detalle`
+  ADD CONSTRAINT `tbl_detalle_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `tbl_usuario` (`matricula`),
+  ADD CONSTRAINT `tbl_detalle_ibfk_2` FOREIGN KEY (`id_producto`) REFERENCES `tbl_productos` (`ID_producto`);
 
 --
 -- Constraints for table `tbl_usuario`
