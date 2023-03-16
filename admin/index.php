@@ -104,8 +104,8 @@
                 </div>
             <?php } ?>
         </div> -->
-        
-        <table>
+        <br>
+        <table border="1">
                 <tr>
                     <th>PRODUCTO</th>
                     <th>NOMBRE</th>

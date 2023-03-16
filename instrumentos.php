@@ -8,6 +8,8 @@ require 'bd.php';
 $obj = new BD_POO();
 
 $instrumentos = $obj ->Ejecutar_Instruccion("SELECT nombre, img, ID_producto FROM tbl_productos WHERE ID_cat=1 AND cantidad > 0");
+$usados = $obj ->Ejecutar_Instruccion("SELECT id_usuario FROM tbl_detalle where activo = 1");
+
 
 
 ?>
@@ -59,6 +61,7 @@ $instrumentos = $obj ->Ejecutar_Instruccion("SELECT nombre, img, ID_producto FRO
 </body>
 
 <script> 
+        
         $(document).on('click','#confirmar',function(){
             let id = $(".card.active").data('id');
             $.ajax({
