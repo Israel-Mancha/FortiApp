@@ -21,12 +21,16 @@ $select_cat = $obj->Ejecutar_Instruccion("select nombre from tbl_categoria where
 
 $select_user = $obj->Ejecutar_Instruccion("select nombres, ap_pat from tbl_usuario where matricula = 21005320");
 
-/* @$nombre = $_POST['nombre'];
-@$categoria = $_POST['categoria'];
-@$cant = $_POST['cant'];
-@$img = $_POST['archivo'];
 
-$obj->Ejecutar_Instruccion("insert into tbl_productos (nombre, img, ID_cat, cantidad, estado) values('$nombre','$img','$categoria','$cant','1')"); */
+if (isset($_POST['btnSend'])) {
+    # code...
+    @$nombre = $_POST['nombre'];
+    @$categoria = $_POST['categoria'];
+    @$cant = $_POST['cant'];
+    @$img = $_POST['archivo'];
+
+    $obj->Ejecutar_Instruccion("insert into tbl_productos (nombre, img, ID_cat, cantidad) values('$nombre','$img','$categoria','$cant')"); 
+}
 
 ?>
 
