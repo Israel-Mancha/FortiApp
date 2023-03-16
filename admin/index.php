@@ -1,5 +1,9 @@
 <?php
 
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+
     $diassemana = array("Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sábado");
     $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
  
@@ -13,15 +17,23 @@
 
     $obj = new BD_PDO();
 
+    //Cuenta todos los productos que están en uso
+    $productos_usados_cont = $obj->Ejecutar_Instruccion("select count(*) total from tbl_detalle where activo = 1");
+
+    //Trae todos los productos
+    $productos_usados = $obj->Ejecutar_Instruccion("select * from tbl_detalle where activo = 1");
+
+    //Cuenta todos los productos
+    $total_productos = $obj->Ejecutar_Instruccion("select count(*) total from tbl_productos");
+
+
     $result = $obj->Ejecutar_Instruccion("select nombres, apellidoP from tbl_admin LIMIT 1");
     /* var_dump($result); */
 
-    $select_prod = $obj->Ejecutar_Instruccion("select nombre from tbl_productos where ID_producto = 9");
+    $result_tabla = $obj->Ejecutar_Instruccion("SELECT tbl_productos.nombre, nombres, matricula,tbl_carrera.nombre from tbl_productos INNER JOIN tbl_detalle ON tbl_productos.ID_producto=tbl_detalle.id_producto INNER JOIN tbl_usuario ON tbl_detalle.id_usuario=tbl_usuario.matricula INNER JOIN tbl_carrera ON tbl_usuario.carrera=tbl_carrera.ID_carrera");
 
-    $select_cat = $obj->Ejecutar_Instruccion("select nombre from tbl_categoria where ID_categoria = 2");
-
-    $select_user = $obj->Ejecutar_Instruccion("select nombres, ap_pat from tbl_usuario where matricula = 21005320");
-
+    
+        
 ?>
 
 <!DOCTYPE html>
@@ -63,35 +75,63 @@
         <div class="products-status">
             <div class="item-status">
             <!-- no es tan necesario, pero en caso de ponerlo sí traerlo desde la BD -->
-                <span class="status-number">6</span> 
+                <span class="status-number"><?php echo $productos_usados_cont[0][0]; ?></span> 
                 <span class="status-type">En uso</span>
             </div>
-            <div class="item-status">
+            <!-- <div class="item-status">
                 <span class="status-number">18</span>
                 <span class="status-type">En desuso</span>
-            </div>
+            </div> -->
             <div class="item-status">
-                <span class="status-number">24</span>
+                <span class="status-number"><?php echo $total_productos[0][0] ?></span>
                 <span class="status-type">Total</span>
             </div>
         </div>
-        <div class="main-content">
+        <!-- <div class="main-content">
             <?php
                 $date = date('d')." de ".$meses[date('n')-1]. " del ".date('Y');
-                for ($i=0; $i<6; $i++) {
+                
+                for ($i=1; $i<=$productos_usados_cont[0][0]; $i++) {
             ?>
                 <div class="box">
                     <span class="fecha"><?php echo $date;?></span><br>
                     <span class="prod-name"><?php echo $select_prod[0]['nombre']; ?></span>
                     <span class="prod-cat"><?php echo $select_cat[0]['nombre']; ?></span><br>
-                    <?php if ($i === 0) { ?>
+                    <?php if ($i === 1) { ?>
                         <div class="progress-bar"><div class="progress"></div></div><br>
                         <span class="in-poss">En uso por: <?php echo $select_user[0]['nombres'] . ' ' . $select_user[0]['ap_pat']; ?></span>
                     <?php } ?>
                 </div>
             <?php } ?>
-        </div>
+        </div> -->
+        
+        <table>
+                <tr>
+                    <th>PRODUCTO</th>
+                    <th>NOMBRE</th>
+                    <th>MATRÍCULA</th>
+                    <th>CARRERA</th>
+                    <th>TIEMPO RESTANTE</th>
+                </tr>
+                <?php
+                foreach($result_tabla as $productos){ ?>
+                <tr>
+                    <th><?php echo $productos[0]?></th>
+                    <th><?php echo $productos[1]?></th>
+                    <th><?php echo $productos[2]?></th>
+                    <th><?php echo $productos[3]?></th>
+                    <th></th>
+                </tr>
+                <?php } ?>
+                
+            </table>
+
     </main>
+    
+    
+    
+
+    
     
 
 <script src="js/main.js"></script>
