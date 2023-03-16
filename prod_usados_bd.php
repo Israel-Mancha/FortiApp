@@ -4,10 +4,7 @@ error_reporting(0);
 require 'bd.php';
 $obj = new BD_POO();
 
-$productos = $obj->Ejecutar_Instruccion
-    ("SELECT CONCAT(tbl_usuario.nombres, ' ',tbl_usuario.ap_pat) AS Alumno, CONCAT(tbl_carrera.nombre, ' ',tbl_usuario.cuatrimestre) AS Carrera
-    FROM tbl_usuario INNER JOIN tbl_carrera 
-    ON tbl_usuario.carrera = tbl_carrera.ID_carrera");
+$result_tabla = $obj->Ejecutar_Instruccion("SELECT tbl_productos.nombre, nombres, matricula,tbl_carrera.nombre,img from tbl_productos INNER JOIN tbl_detalle ON tbl_productos.ID_producto=tbl_detalle.id_producto INNER JOIN tbl_usuario ON tbl_detalle.id_usuario=tbl_usuario.matricula INNER JOIN tbl_carrera ON tbl_usuario.carrera=tbl_carrera.ID_carrera");
 
 ?>
 <!DOCTYPE html>
@@ -26,10 +23,11 @@ $productos = $obj->Ejecutar_Instruccion
 <body class="fondo">
     <p class="prod_uso">Productos en uso</p>
     <div class="scroll_list">
-        <?php foreach($productos as $renglon) { ?>
+        <?php foreach($result_tabla as $renglon) { ?>
             <button class="box">
-                <img src="img/volleyball.png" alt="VolleyBall">
-                <h2><?php echo $renglon[0];?><br><?php echo $renglon[1];?></h2>
+                
+                <img src="img/<?php echo $renglon[4]; ?>" alt="VolleyBall">
+                <h2><?php echo $renglon[0];?><br><?php echo $renglon[1];?><br><?php echo $renglon[3] ?></h2>
                 <div id="clock_wrapper">
                     <canvas id="clock" width="30" height="30"></canvas>
                     <div id="timer"></div>
