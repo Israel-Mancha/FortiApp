@@ -14,10 +14,7 @@ if (isset($_POST['btnentrar']) == 'entrar') {
         $_SESSION['usuario'] = $usuario[0][1];
         $_SESSION['matricula'] = $usuario[0][0];
         header('Location: ventana_em.php');
-    }/*else {
-        # code...
-        echo '<script>alert("Usuario no encontrado");</script>';
-    }*/
+    }
 }
 ?>
 
