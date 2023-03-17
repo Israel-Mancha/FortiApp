@@ -62,8 +62,13 @@ $culturales = $obj ->Ejecutar_Instruccion("SELECT nombre, img, ID_producto FROM 
                 url: "insertar_detalle.php",
                 data: "id=" + id,
                 success: function (response) {
-                    
+                    response=JSON.parse(response);
+                    if(response.status === 'success'){
                     window.location.href="ventana_emergente.php";
+                    }
+                    else{
+                        alert("No, pa");
+                    }
                 }
             });
         });
