@@ -1,9 +1,10 @@
 <?php
 error_reporting(0);
 
-if (isset($_POST['btnOK']) == 'OK') {
-    header('Location: selecciona_cat.php');
-}
+require 'bd.php';
+$obj = new BD_POO();
+
+$result_tabla = $obj->Ejecutar_Instruccion("SELECT tbl_productos.nombre, nombres, matricula,tbl_carrera.nombre,img from tbl_productos INNER JOIN tbl_detalle ON tbl_productos.ID_producto=tbl_detalle.id_producto INNER JOIN tbl_usuario ON tbl_detalle.id_usuario=tbl_usuario.matricula INNER JOIN tbl_carrera ON tbl_usuario.carrera=tbl_carrera.ID_carrera");
 
 ?>
 <!DOCTYPE html>
@@ -20,19 +21,22 @@ if (isset($_POST['btnOK']) == 'OK') {
     <title>FortiApp</title>
 </head>
 <body class="fondo">
-   <p class="prod_uso">Productos en uso</p>
-   <div class="scroll_list">
-        <button class="box"><img src="img/volleyball.png" alt="VolleyBall"><h2>Miguel Tienda<br>TIADSM 5B</h2><div id="clock_wrapper"><canvas id="clock" width="30" height="30"></canvas><div id="timer"></div></div></button>
-        <button class="box"><img src="img/balon-fut.png" alt="Futbol"><h2>Miguel Tienda<br>TIADSM 5B</h2></button>
-        <button class="box"><img src="img/baloncesto.png" alt="Baloncesto"><h2>Miguel Tienda<br>TIADSM 5B</h2></button>
-        <button class="box"><img src="img/ajedrez.png" alt="Ajedrez"><h2>Miguel Tienda<br>TIADSM 5B</h2></button>
-        <button class="box"><img src="img/guitar.png" alt="Guitarra"><h2>Miguel Tienda<br>TIADSM 5B</h2></button>
-        <button class="box"><img src="img/saxofon.png" alt="Saxofon"><h2>Miguel Tienda<br>TIADSM 5B</h2></button>
-        <button class="box"><img src="img/acordeon.png" alt="Acordeon"><h2>Miguel Tienda<br>TIADSM 5B</h2></button>
-        <button class="box"><img src="img/casaca.png" alt="Casaca"><h2>Miguel Tienda<br>TIADSM 5B</h2></button>
+    <p class="prod_uso">Productos en uso</p>
+    <div class="scroll_list">
+        <?php foreach($result_tabla as $renglon) { ?>
+            <button class="box">
+                
+                <img src="img/<?php echo $renglon[4]; ?>">
+                <h2><?php echo $renglon[0];?><br><?php echo $renglon[1];?><br><?php echo $renglon[3] ?></h2>
+                <div id="clock_wrapper">
+                    <canvas id="clock" width="30" height="30"></canvas>
+                    <div id="timer"></div>
+                </div>
+            </button>
+        <?php } ?>
     </div>
     <div>
-    <a class="btnvolver2" href="selecciona_cat.php">VOLVER</a>
+        <a class="btnvolver2" href="selecciona_cat.php">VOLVER</a>
     </div>
     <script src="js/scroll_list.js"></script>
 </body>

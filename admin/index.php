@@ -1,5 +1,7 @@
 <?php
 
+    error_reporting(0);
+
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
@@ -31,6 +33,9 @@
     /* var_dump($result); */
 
     $result_tabla = $obj->Ejecutar_Instruccion("SELECT tbl_productos.nombre, nombres, matricula,tbl_carrera.nombre from tbl_productos INNER JOIN tbl_detalle ON tbl_productos.ID_producto=tbl_detalle.id_producto INNER JOIN tbl_usuario ON tbl_detalle.id_usuario=tbl_usuario.matricula INNER JOIN tbl_carrera ON tbl_usuario.carrera=tbl_carrera.ID_carrera where activo = 1");
+
+    //Suma la cantidad de productos que hay
+    $total_cantidad = $obj->Ejecutar_Instruccion("SELECT SUM(cantidad) FROM tbl_productos");
 
     
         
@@ -83,7 +88,7 @@
                 <span class="status-type">En desuso</span>
             </div> -->
             <div class="item-status">
-                <span class="status-number"><?php echo $total_productos[0][0] ?></span>
+                <span class="status-number"><?php echo $total_cantidad[0][0] ?></span>
                 <span class="status-type">Total</span>
             </div>
         </div>
@@ -105,6 +110,7 @@
             <?php } ?>
         </div> -->
         <br>
+        <?php if($productos_usados_cont[0][0]>0){  ?>
         <table border="1">
                 <tr>
                     <th>PRODUCTO</th>
@@ -125,6 +131,13 @@
                 <?php } ?>
                 
             </table>
+            <?php } 
+            else{
+                echo "<h1>No hay productos en uso.</h1>";
+            }
+            
+            ?>
+            
 
     </main>
     
@@ -134,6 +147,6 @@
     
     
 
-<script src="js/main.js"></script>
+<!-- <script src="js/main.js"></script> -->
 </body>
 </html>
