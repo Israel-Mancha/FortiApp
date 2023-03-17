@@ -1,17 +1,21 @@
 <?php
 // Conectarse a la base de datos
-$conexion = mysqli_connect("localhost", "root", "", "forti_app");
+require '../database/bd.php';
+
+$obj = new BD_PDO();
 
 // Verificar si se recibió el ID del producto
 if(isset($_GET['id'])) {
   // Obtener el ID del producto de la URL
   $id_producto = $_GET['id'];
 
-  // Eliminar el producto de la tabla de productos
-  mysqli_query($conexion, "SELECT * FROM tbl_productos WHERE ID_producto = '$id_producto'");
+  // Buscar el producto de la tabla de productos
+  $update = $obj->Ejecutar_Instruccion("SELECT * FROM tbl_productos WHERE ID_producto = '$id_producto'");
+
+  //echo json_encode($update[0][0].$update[0][1].$update[0][2].$update[0][3]);
 
   // Redirigir al usuario a la página principal de productos
-  header("Location: search.php");
+  //header("Location: search.php?id_mod=");
 } else {
   // Si no se recibió el ID del producto, mostrar un mensaje de error
   echo "Error: No se recibió el ID del producto.";
