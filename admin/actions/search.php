@@ -8,13 +8,16 @@ require '../database/bd.php';
 $obj = new BD_PDO();
 
 $result = $obj->Ejecutar_Instruccion("select nombres, apellidoP from tbl_admin LIMIT 1");
-/* var_dump($result); */
 
-$select_prod = $obj->Ejecutar_Instruccion("select nombre from tbl_productos where ID_producto = 9");
+if(isset($_GET['id_mod'])) {
+    // Obtener el ID del producto de la URL
+    $id_producto = $_GET['id_mod'];
+  
+    // Buscar el producto de la tabla de productos
+    $update = $obj->Ejecutar_Instruccion("SELECT * FROM tbl_productos WHERE ID_producto = '$id_producto'");
+  }
 
-$select_cat = $obj->Ejecutar_Instruccion("select nombre from tbl_categoria where ID_categoria = 2");
-
-$select_user = $obj->Ejecutar_Instruccion("select nombres, ap_pat from tbl_usuario where matricula = 21005320");
+/*echo "<script>window.location.href = 'update.php?id='".$modificar[0][0]."',nombre='".$modificar[0][1]."',categoria='".$modificar[0][2]."',cantidad='".$modificar[0][3]."</script>";*/
 
 ?>
 
@@ -57,14 +60,7 @@ $select_user = $obj->Ejecutar_Instruccion("select nombres, ap_pat from tbl_usuar
         }
 
         function modificar(id_producto) {
-            <?php 
-            $update = $obj->Ejecutar_Instruccion("SELECT * FROM tbl_productos WHERE ID_producto = '$id_producto'");
-            foreach ($update as $modificar) {
-                # code...
-                //echo "<srcipt>window.location.href = 'update.php?id=' + id_producto;</script>";
-                echo "<srcipt>window.location.href = 'update.php?id=".$modificar[0][0].",nombre=".$modificar[0][0].",categoria=";
-            } 
-            ?>
+             window.location.href = 'search.php?id_mod=' + id_producto;
             
         }
     </script>
@@ -153,6 +149,54 @@ $select_user = $obj->Ejecutar_Instruccion("select nombres, ap_pat from tbl_usuar
             mysqli_close($conn);
             ?>
         </div>
+        <br>
+
+        <?php if (isset($_GET['id_mod'])) { ?>
+        <form id="frmAdd" name="frmAdd" action="search.php" method="post">
+                <input class="hidden" id="txtNumEmp" name="txtNumEmp" type="text" placeholder="Id" hidden>
+
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <div class="input-group">
+                        <input class="form-control" id="nombre" name="nombre" type="text" placeholder="Nombre">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="archivo">Imagen:</label>
+                    <div class="input-group">
+                        <label for="archivo" class="custom-file-upload">
+                            Subir Imagen
+                        </label>
+                        <input type="file" id="archivo" name="archivo" accept=".jpg, .png, .pdf">
+                    </div>
+                    <p id="file-name" class="file-name"></p>
+                </div>
+
+                <div class="form-group">
+                    <label for="categoria">Categoría:</label>
+                    <div class="input-group">
+                        <select class="form-control" name="categoria" id="categoria" style="padding-bottom: 5px; padding-top: 5px;">
+                            <option value="" selected disabled>Selecciona</option>
+                            <option value="2">Deportivo</option>
+                            <option value="3">Cultural</option>
+                            <option value="1">Instrumentos</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="cant">Cantidad:</label>
+                    <div class="input-group">
+                        <input class="form-control" id="cant" name="cant" type="number" value="1" min="1">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" id="btnSend" name="btnSend" class="btn btn-primary" value="Registrar">
+                </div>
+            </form>
+            <?php  } ?>
     </main>
 
 </body>
