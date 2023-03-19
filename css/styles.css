@@ -11,15 +11,13 @@ button{
   place-items: center;
 }
 .sub_contenedor{
-  width: 100vw;
-  height: 100vh;
-  display: grid;
-  place-items: center;
+  width: 100%;
 }
 .logo_formulario{
     width: 100px;
     
 }
+
 .matricula{
   position: absolute;
   width: 275px;

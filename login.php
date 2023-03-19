@@ -35,13 +35,11 @@ if (isset($_POST['btnentrar']) == 'entrar') {
 <body>
     <div class="contenedor">
         <img class="logo_formulario"src="img/logo_default.png" alt="Logo">
-            <div class="sub_contenedor">
-                <form action="login.php" method="post">
-                    <input type="text" name="txtmatricula" id="txtmatricula" onkeyup="matricula(this);" class="matricula" placeholder="Matrícula"  >  
-                    <input type="text" name="txtcontra" id="txtcontra" onkeypress="return check(event)" onkeyup="mayus(this);" class="contrasena" placeholder="CURP">
-                    <input type="submit" class="entrar" value="ENTRAR" id="btnentrar" name="btnentrar" onclick="validar()">  
-                </form>  
-            </div>
+            <form action="login.php" method="post">
+                <input type="text" name="txtmatricula" id="txtmatricula" onkeyup="matricula(this);" class="matricula" placeholder="Matrícula">  
+                <input type="text" name="txtcontra" id="txtcontra" onkeypress="return check(event)" onkeyup="mayus(this);" class="contrasena" placeholder="CURP">
+                <input type="submit" class="entrar" value="ENTRAR" id="btnentrar" name="btnentrar" onclick="validar()">  
+            </form>  
         
     </div>
 </body>
