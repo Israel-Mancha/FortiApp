@@ -111,7 +111,7 @@
         </div> -->
         <br>
         <?php if($productos_usados_cont[0][0]>0){  ?>
-        <table border="1">
+        <table>
                 <tr>
                     <th>PRODUCTO</th>
                     <th>NOMBRE</th>
@@ -122,11 +122,13 @@
                 <?php
                 foreach($result_tabla as $productos){ ?>
                 <tr>
-                    <th><?php echo $productos[0]?></th>
-                    <th><?php echo $productos[1]?></th>
-                    <th><?php echo $productos[2]?></th>
-                    <th><?php echo $productos[3]?></th>
-                    <th></th>
+                    
+                    <td><?php echo $productos[0]?></td>
+                    <td><?php echo $productos[1]?></td>
+                    <td><?php echo $productos[2]?></td>
+                    <td><?php echo $productos[3]?></td>
+                    <td></td>
+                    
                 </tr>
                 <?php } ?>
                 

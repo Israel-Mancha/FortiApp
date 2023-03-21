@@ -7,6 +7,18 @@ body{
     flex-wrap: wrap;
     margin: 0 3% 0 3%;
 }
+table{
+    border: #000000 1px solid;
+}
+th, td{
+    text-align: center;
+}
+th{
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+}
+
 
 .header{
     /* height: 5em; */
