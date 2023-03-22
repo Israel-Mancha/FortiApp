@@ -10,7 +10,7 @@ if(isset($_GET['id_mod'])) {
   $id_producto = $_GET['id_mod'];
 
   // Buscar el producto de la tabla de productos
-  $update = $obj->Ejecutar_Instruccion("SELECT * FROM tbl_productos WHERE ID_producto = '$id_producto'");
+  $update = $obj->buscar_mod($id_producto);
 
   //echo json_encode($update[0][0].$update[0][1].$update[0][2].$update[0][3]);
 

@@ -25,6 +25,7 @@ if (isset($_POST['btnUpdate'])) {
   @$img = $_POST['archivo'];
   $obj->actualizar($nombre,$img,$categoria,$cant,$ID);
 }
+@$datos_categoria = $obj->listados();
 
 /*echo "<script>window.location.href = 'update.php?id='".$modificar[0][0]."',nombre='".$modificar[0][1]."',categoria='".$modificar[0][2]."',cantidad='".$modificar[0][3]."</script>";*/
 include '../View/search.php';

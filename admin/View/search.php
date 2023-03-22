@@ -120,9 +120,7 @@
                     <div class="input-group">
                         <select class="form-control" name="categoria" id="categoria" style="padding-bottom: 5px; padding-top: 5px;">
                             <option value="" selected disabled>Selecciona</option>
-                            <option value="2">Deportivo</option>
-                            <option value="3">Cultural</option>
-                            <option value="1">Instrumentos</option>
+                            <?php echo $datos_categoria ?>
                         </select>
                     </div>
                 </div>

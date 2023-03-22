@@ -1,8 +1,8 @@
 <?php
 require '../Model/fecha.php';
-require '../Model/insertar_productos.php';
+require '../Model/CRUD_productos.php';
 
-$obj = new productos_admin();
+$obj = new crud();
 
 $fecha = fecha_actual();
 $admin = $obj->admin();
