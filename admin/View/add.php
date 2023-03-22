@@ -1,39 +1,3 @@
-<?php
-
-$diassemana = array("Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sábado");
-$meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
-
-?>
-
-<?php
-require '../database/bd.php';
-
-date_default_timezone_set("America/Matamoros");
-
-$obj = new BD_PDO();
-
-$result = $obj->Ejecutar_Instruccion("select nombres, apellidoP from tbl_admin LIMIT 1");
-/* var_dump($result); */
-
-$select_prod = $obj->Ejecutar_Instruccion("select nombre from tbl_productos where ID_producto = 9");
-
-$select_cat = $obj->Ejecutar_Instruccion("select nombre from tbl_categoria where ID_categoria = 2");
-
-$select_user = $obj->Ejecutar_Instruccion("select nombres, ap_pat from tbl_usuario where matricula = 21005320");
-
-
-if (isset($_POST['btnSend'])) {
-    # code...
-    @$nombre = $_POST['nombre'];
-    @$categoria = $_POST['categoria'];
-    @$cant = $_POST['cant'];
-    @$img = $_POST['archivo'];
-
-    $obj->Ejecutar_Instruccion("insert into tbl_productos (nombre, img, ID_cat, cantidad) values('$nombre','$img','$categoria','$cant')"); 
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,11 +18,11 @@ if (isset($_POST['btnSend'])) {
         </div>
         <div class="header-right">
             <div class="user"><img src="../img/user.svg" alt="Foto de Usuario"></div>
-            <div class="username"><?php echo $result[0]['nombres'] . ' ' . $result[0]['apellidoP']; ?></div>
+            <div class="username"><?php echo $admin; ?></div>
         </div>
     </header>
     <aside class="aside-left">
-        <a href="../index.php" class="home"><img src="../img/home.svg" alt="Icono Inicio"></a>
+        <a href="../Controller/index.php" class="home"><img src="../img/home.svg" alt="Icono Inicio"></a>
         <div class="dropdown">
             <button class="prod"><img src="../img/products.svg" alt="Productos"></button>
             <div class="dropdown-content">
@@ -72,7 +36,7 @@ if (isset($_POST['btnSend'])) {
         <div class="main-top">
             <div>Agregar producto</div>
             <div>
-                <?php echo $diassemana[date('w')] . " " . date('d') . " de " . $meses[date('n') - 1] . " del " . date('Y'); ?>
+                <?php echo $fecha; ?>
             </div>
         </div>
         <div class="products-status">
@@ -102,9 +66,7 @@ if (isset($_POST['btnSend'])) {
                     <div class="input-group">
                         <select class="form-control" name="categoria" id="categoria" style="padding-bottom: 5px; padding-top: 5px;">
                             <option value="" selected disabled>Selecciona</option>
-                            <option value="2">Deportivo</option>
-                            <option value="3">Cultural</option>
-                            <option value="1">Instrumentos</option>
+                            <?php echo $datos_categoria ?>
                         </select>
                     </div>
                 </div>

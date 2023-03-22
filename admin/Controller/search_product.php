@@ -1,13 +1,13 @@
 <?php
 // Conectarse a la base de datos
-require '../database/bd.php';
+require '../Model/CRUD_productos.php';
 
-$obj = new BD_PDO();
+$obj = new crud();
 
 // Verificar si se recibió el ID del producto
-if(isset($_GET['id'])) {
+if(isset($_GET['id_mod'])) {
   // Obtener el ID del producto de la URL
-  $id_producto = $_GET['id'];
+  $id_producto = $_GET['id_mod'];
 
   // Buscar el producto de la tabla de productos
   $update = $obj->Ejecutar_Instruccion("SELECT * FROM tbl_productos WHERE ID_producto = '$id_producto'");

@@ -1,26 +1,3 @@
-<?php
-date_default_timezone_set("America/Matamoros");
-$diassemana = array("Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sábado");
-$meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
-
-require '../database/bd.php';
-
-$obj = new BD_PDO();
-
-$result = $obj->Ejecutar_Instruccion("select nombres, apellidoP from tbl_admin LIMIT 1");
-
-if(isset($_GET['id_mod'])) {
-    // Obtener el ID del producto de la URL
-    $id_producto = $_GET['id_mod'];
-  
-    // Buscar el producto de la tabla de productos
-    $update = $obj->Ejecutar_Instruccion("SELECT * FROM tbl_productos WHERE ID_producto = '$id_producto'");
-  }
-
-/*echo "<script>window.location.href = 'update.php?id='".$modificar[0][0]."',nombre='".$modificar[0][1]."',categoria='".$modificar[0][2]."',cantidad='".$modificar[0][3]."</script>";*/
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -75,11 +52,11 @@ if(isset($_GET['id_mod'])) {
         </div>
         <div class="header-right">
             <div class="user"><img src="../img/user.svg" alt="Foto de Usuario"></div>
-            <div class="username"><?php echo $result[0]['nombres'] . ' ' . $result[0]['apellidoP']; ?></div>
+            <div class="username"><?php echo $admin; ?></div>
         </div>
     </header>
     <aside class="aside-left">
-        <a href="../index.php" class="home"><img src="../img/home.svg" alt="Icono Inicio"></a>
+        <a href="../Controller/index.php" class="home"><img src="../img/home.svg" alt="Icono Inicio"></a>
         <div class="dropdown">
             <button class="prod"><img src="../img/products.svg" alt="Productos"></button>
             <div class="dropdown-content">
@@ -92,7 +69,7 @@ if(isset($_GET['id_mod'])) {
     <main class="main">
         <div class="main-top">
             <div>Buscar producto</div>
-            <div><?php echo $diassemana[date('w')] . " " . date('d') . " de " . $meses[date('n') - 1] . " del " . date('Y'); ?></div>
+            <div><?php echo $fecha; ?></div>
         </div>
         <div class="products-status-1">
             <form action="search.php" class="frm-search" method="post">
@@ -103,62 +80,27 @@ if(isset($_GET['id_mod'])) {
                 <input class="btn-search" type="submit" value="Buscar">
             </form>
             <h1>Resultados de búsqueda</h1>
-            <?php
-            // Recuperar el nombre enviado por el formulario
-            @$nombre = $_POST['busqueda'];
-
-            // Realizar la conexión a la base de datos y la consulta
-            $conn = mysqli_connect('localhost', 'root', '', 'forti_app');
-            $sql = "SELECT * FROM tbl_productos WHERE nombre LIKE '%$nombre%'";
-            $resultado = mysqli_query($conn, $sql);
-
-            // Mostrar los resultados en una tabla
-            if (mysqli_num_rows($resultado) > 0) {
-                echo "<table>";
-                echo "<tr><th>ID</th><th>Nombre</th><th>Categoría</th><th>Cantidad</th><th>Acción</th></tr>";
-                while ($fila = mysqli_fetch_assoc($resultado)) {
-                    if ($fila['ID_cat'] == 1) {
-                        $fila['ID_cat'] = 'Instrumento';
-                        /* echo "Instrumento"; */
-                    } else if ($fila['ID_cat'] == 2) {
-                        $fila['ID_cat'] = 'Deportivo';
-                        /* echo "Deportivo"; */
-                    } else if ($fila['ID_cat'] == 3) {
-                        $fila['ID_cat'] = 'Cultural';
-                        /* echo "Cultural"; */
-                    }
-
-                    echo "<tr>";
-                    echo "<td>" . $fila['ID_producto'] . "</td>";
-                    echo "<td>" . $fila['nombre'] . "</td>";
-                    echo "<td>" . $fila['ID_cat'] . "</td>";
-                    echo "<td>" . $fila['cantidad'] . "</td>";
-                    // echo "<td>" . $fila['estado'] . "</td>";
-                    echo "<td>";
-                    echo "<button onclick='eliminar(" . $fila['ID_producto'] . ")'>Eliminar</button>";
-                    echo "<button onclick='modificar(" . $fila['ID_producto'] . ")'>Modificar</button>";
-                    echo "</td>";
-                    echo "</tr>";
-                }
-                echo "</table>";
-            } else {
-                echo "No se encontraron resultados.";
-            }
-
-            // Cerrar la conexión a la base de datos
-            mysqli_close($conn);
-            ?>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Categoría</th>
+                    <th>Cantidad</th>
+                    <th>Acción</th>
+                </tr>
+                    <?php echo $tabla; ?>
+            </table>
         </div>
         <br>
 
         <?php if (isset($_GET['id_mod'])) { ?>
         <form id="frmAdd" name="frmAdd" action="search.php" method="post">
-                <input class="hidden" id="txtNumEmp" name="txtNumEmp" type="text" placeholder="Id" hidden>
+                <input class="hidden" id="txtNumEmp" name="txtNumEmp" type="text" placeholder="Id" value="<?php echo @$update[0][0]; ?>" hidden>
 
                 <div class="form-group">
                     <label for="nombre">Nombre:</label>
                     <div class="input-group">
-                        <input class="form-control" id="nombre" name="nombre" type="text" placeholder="Nombre">
+                        <input class="form-control" id="nombre" name="nombre" type="text" placeholder="Nombre" value="<?php echo @$update[0][1]; ?>">
                     </div>
                 </div>
 
@@ -168,7 +110,7 @@ if(isset($_GET['id_mod'])) {
                         <label for="archivo" class="custom-file-upload">
                             Subir Imagen
                         </label>
-                        <input type="file" id="archivo" name="archivo" accept=".jpg, .png, .pdf">
+                        <input type="file" id="archivo" name="archivo" accept=".jpg, .png, .pdf" value="<?php echo @$update[0][2]; ?>">
                     </div>
                     <p id="file-name" class="file-name"></p>
                 </div>
@@ -188,12 +130,12 @@ if(isset($_GET['id_mod'])) {
                 <div class="form-group">
                     <label for="cant">Cantidad:</label>
                     <div class="input-group">
-                        <input class="form-control" id="cant" name="cant" type="number" value="1" min="1">
+                        <input class="form-control" id="cant" name="cant" type="number" value="<?php echo @$update[0][4]; ?>" min="1">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <input type="submit" id="btnSend" name="btnSend" class="btn btn-primary" value="Registrar">
+                    <input type="submit" id="btnUpdate" name="btnUpdate" class="btn btn-primary" value="Registrar">
                 </div>
             </form>
             <?php  } ?>
