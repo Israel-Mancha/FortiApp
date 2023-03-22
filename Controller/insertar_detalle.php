@@ -7,9 +7,9 @@ $matricula =  $_SESSION['matricula'];
 $usuario = $_SESSION['usuario'];
 
 $mifecha = date('Y-m-d H:i:s');
-require 'bd.php';
+require '../Model/bd.php';
 
-$obj = new BD_POO();
+$obj = new BD_PDO();
 
 $consulta = $obj->Ejecutar_Instruccion("select id_usuario from tbl_detalle where activo = 1 and id_usuario = $matricula");
 

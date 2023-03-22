@@ -1,6 +1,6 @@
 <?php
 
-class BD_POO
+class BD_PDO
 {
 	function Ejecutar_Instruccion($instruccion_sql)
 	{

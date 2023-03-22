@@ -1,3 +1,3 @@
 setTimeout(function(){
-    location.href = "login.php";
+    location.href = "Controller/login.php";
 }, 2000);
