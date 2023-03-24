@@ -15,7 +15,7 @@ button{
 }
 .logo_formulario{
     width: 100px;
-    
+    height: 100px;
 }
 
 .matricula{
@@ -63,7 +63,7 @@ height: 41px;
 left: 128px;
 top: 412px;
 color: white;
-background: #2FC72F;
+background: #2cbf2c;
 border-radius: 50px;
 border: 0;
 }
