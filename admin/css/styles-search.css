@@ -1,0 +1,128 @@
+body{
+    overflow: hidden;
+}
+
+form {
+    border-radius: 4px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    width: 300px;
+    font-size: 1.3em;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .input-group {
+    display: flex;
+    align-items: center;
+  }
+  
+  .input-group-append {
+    background-color: #F7FAFC;
+    border: 1px solid #F7FAFC;
+    border-left: none;
+    padding: 0px 10px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .custom-file-upload {
+    cursor: pointer;
+  }
+  
+  .file-name {
+    margin-top: 5px;
+  }
+  
+  .form-control {
+    border: 1px solid #2FC72F;
+    background-color: #f7fafc;
+    padding: 10px;
+    border-radius: 4px;
+    width: 100%;
+    height: 40px;
+    font-size: 1em;
+
+  }
+
+  .form-control-search {
+    border: 1px solid #2FC72F;
+    background-color: #f7fafc;
+    padding: 10px;
+    border-radius: 4px;
+    width: 15%;
+    height: 40px;
+    font-size: 1em;
+    float: left;
+    margin: 0 2% 0 1%;
+  }
+  
+  select.form-control {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #f7fafc;
+    cursor: pointer;
+  }
+  
+  input[type="submit"] {
+    background-color: #2FC72F;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    }
+    
+    input[type="submit"]:hover {
+    background-color: #3dac40;
+    }
+    
+    .custom-file-upload {
+        display: inline-block;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        color: #888;
+        padding: 6px 12px;
+        cursor: pointer;
+        border-radius: 4px;
+        font-size: 14px;
+      }
+      
+      .custom-file-upload:hover {
+        border-color: #2FC72F;
+        color: #2FC72F;
+      }
+      
+      input[type="file"] {
+        display: none;
+      }
+    
+      .custom-file-upload {
+        display: inline-block;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        color: #666;
+        cursor: pointer;
+        padding: 8px 16px;
+        font-size: 14px;
+        font-family: Arial, sans-serif;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+      }
+      
+      .custom-file-upload:hover {
+        background-color: #f5f5f5;
+      }
+
+      
+.salto{
+    margin: 0 0 100% 0;
+}

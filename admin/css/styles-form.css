@@ -1,5 +1,4 @@
 form {
-    background-color: #fff;
     padding: 40px 300px 40px 20px;
     border-radius: 4px;
   }
@@ -47,6 +46,18 @@ form {
     height: 40px;
     font-size: 1em;
 
+  }
+
+  .form-control-search {
+    border: 1px solid #2FC72F;
+    background-color: #f7fafc;
+    padding: 10px;
+    border-radius: 4px;
+    width: 15%;
+    height: 40px;
+    font-size: 1em;
+    float: left;
+    margin: 0 2% 0 1%;
   }
   
   select.form-control {
