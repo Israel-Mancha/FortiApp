@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/styles-search.css">
     <title>Productos</title>
     <style>
     table {
@@ -81,7 +82,7 @@
                 <a href="search.php" class="search"><img src="../img/search.svg" alt="Productos"></a>
             </div>
         </div>
-        <a href="#" download class="pdf"><img src="../img/pdf.svg" alt="PDF"></a>
+        <a href="Registro-de-Prestamo.pdf" download class="pdf"><img src="../img/pdf.svg" alt="PDF"></a>
     </aside>
     <main class="main">
         <div class="main-top">
