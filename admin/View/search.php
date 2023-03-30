@@ -7,6 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles-form.css">
     <link rel="stylesheet" href="../css/styles.css">
+    <!--Datatable plugin CSS file -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" />
+    <!--jQuery library file -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <!--Datatable plugin JS library file -->
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
     <title>Productos</title>
     <style>
     table {
@@ -41,6 +47,23 @@
         window.location.href = 'search.php?id_mod=' + id_producto;
 
     }
+    $(document).ready(function () {
+        $('table.stripe').DataTable({
+            language: {
+                search: "Buscar: ",
+                infoEmpty: "No hay productos registrados",
+                info: "Mostrando registros del _START_ al _END_ de un total de _TOTAL_",
+                lengthMenu: "Agrupar en _MENU_ registros",
+                zeroRecords: "No se encontraron datos con tu busqueda",
+                paginate: {
+                    first: "Primero",
+                    previous: "Anterior",
+                    next: "Siguiente",
+                    last: "Ultimo"
+                }
+            }
+        });
+    });
     </script>
 
 </head>
@@ -130,7 +153,8 @@
                 <input class="btn-search" type="submit" value="Buscar">
             </form>
             <h1>Resultados de búsqueda</h1>
-            <table>
+            <table class="stripe">
+                <thead>
                 <tr>
                     <th>ID</th>
                     <th>Nombre</th>
@@ -138,7 +162,9 @@
                     <th>Cantidad</th>
                     <th>Acción</th>
                 </tr>
-                <?php echo $tabla; ?>
+                </thead>
+                <tbody><?php echo $tabla; ?></tbody>
+                
             </table>
         </div>
         <br>
