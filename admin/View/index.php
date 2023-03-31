@@ -12,7 +12,7 @@
     }
     </script>
 </head>
-<body>
+<body style="background-color: #dadee8;">
     <header class="header">
         <div class="header-left">
             <div class="logo"><img src="../img/logo.svg" alt="Logo"></div>
@@ -58,7 +58,7 @@
                     <th>NOMBRE</th>
                     <th>MATRÍCULA</th>
                     <th>CARRERA</th>
-                    <th>TIEMPO RESTANTE</th>
+                    <th>ENTREGA</th>
                 </tr>
                 <?php echo $tabla; ?>
                 

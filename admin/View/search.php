@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/styles-form.css">
+    <link rel="stylesheet" href="../css/styles-search.css">
     <link rel="stylesheet" href="../css/styles.css">
     <!--Datatable plugin CSS file -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" />
@@ -71,7 +71,7 @@
 
 </head>
 
-<body>
+<body style="background-color: #dadee8;">
     <header class="header">
         <div class="header-left">
             <div class="logo"><img src="../img/logo.svg" alt="Logo"></div>
@@ -107,7 +107,7 @@
 
                 <div class="form-group">
                     <label for="nombre">Nombre:</label>
-                    <div class="input-group">
+                    <div class="input-group" style="width: 50em">
                         <input class="form-control" id="nombre" name="nombre" type="text" placeholder="Nombre"
                             value="<?php echo @$update[0][1]; ?>">
                     </div>
@@ -127,7 +127,7 @@
 
                 <div class="form-group">
                     <label for="categoria">Categoría:</label>
-                    <div class="input-group">
+                    <div class="input-group" style="width: 50em">
                         <select class="form-control" name="categoria" id="categoria"
                             style="padding-bottom: 5px; padding-top: 5px;">
                             <option value="" selected disabled>Selecciona</option>
@@ -138,7 +138,7 @@
 
                 <div class="form-group">
                     <label for="cant">Cantidad:</label>
-                    <div class="input-group">
+                    <div class="input-group" style="width: 50em">
                         <input class="form-control" id="cant" name="cant" type="number"
                             value="<?php echo @$update[0][4]; ?>" min="1">
                     </div>
