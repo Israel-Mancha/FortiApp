@@ -27,7 +27,8 @@ class index extends BD_PDO {
         return $result_tabla;
     }
     function entregar_producto($id_detalle){
-        $this->Ejecutar_Instruccion("UPDATE tbl_detalle SET activo=0 WHERE ID_detalle=$id_detalle");
+        //$this->Ejecutar_Instruccion("UPDATE tbl_detalle SET activo=0 WHERE ID_detalle=$id_detalle");
+        $this->Ejecutar_Instruccion("DELETE from tbl_detalle WHERE ID_detalle=$id_detalle");
     }
     function tabla_reserva($result){
         $tabla="";
