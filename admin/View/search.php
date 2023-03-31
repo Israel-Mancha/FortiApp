@@ -158,6 +158,7 @@
                 </div>
                 <input class="btn-search" type="submit" value="Buscar">
             </form> -->
+            <?php if (empty(($_GET['id_mod']))) { ?>
             <h1>Resultados de búsqueda</h1>
             <table class="stripe">
                 <thead>
@@ -172,6 +173,7 @@
                 <tbody><?php echo $tabla; ?></tbody>
                 
             </table>
+            <?php  } ?>
         </div>
         <br>
 
