@@ -47,6 +47,9 @@
         window.location.href = 'search.php?id_mod=' + id_producto;
 
     }
+    function cancelaR() {
+            window.location.href = "search.php";
+    }
     $(document).ready(function () {
         $('table.stripe').DataTable({
             language: {
@@ -141,7 +144,10 @@
                 </div>
 
                 <div class="form-group">
-                    <input type="submit" id="btnUpdate" name="btnUpdate" class="btn btn-primary" value="Registrar">
+                    <input type="submit" id="btnUpdate" name="btnUpdate" class="btn btn-primary" value="Modificar">
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary" onclick="javascript: cancelar();" value="Cancelar">
                 </div>
             </form>
             <?php  } ?>

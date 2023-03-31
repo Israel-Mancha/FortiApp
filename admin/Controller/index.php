@@ -13,6 +13,11 @@
     $admin = $obj->admin();
     $result_tabla = $obj->tabla_detalle();
     $tabla = $obj->tabla_reserva($result_tabla);
+    if(isset($_GET['id'])) {
+        $id_producto = $_GET['id'];
+        $obj->entregar_producto($id_producto);
+        header("Location: index.php");
+      }
     include '../View/index.php';
     
 ?>
