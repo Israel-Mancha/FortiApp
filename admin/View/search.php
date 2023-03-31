@@ -5,21 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles-form.css">
     <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/styles-search.css">
     <!--Datatable plugin CSS file -->
-    <link rel="stylesheet" href=
-"https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" />
-  
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" />
     <!--jQuery library file -->
-    <script type="text/javascript" 
-        src="https://code.jquery.com/jquery-3.5.1.js">
-    </script>
-  
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <!--Datatable plugin JS library file -->
-    <script type="text/javascript" 
-src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
-    </script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
     <title>Productos</title>
     <style>
     table {
@@ -53,6 +46,9 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
     function modificar(id_producto) {
         window.location.href = 'search.php?id_mod=' + id_producto;
 
+    }
+    function cancelaR() {
+            window.location.href = "search.php";
     }
     $(document).ready(function () {
         $('table.stripe').DataTable({
@@ -99,7 +95,8 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
     </aside>
     <main class="main">
         <div class="main-top">
-            <div>Buscar producto</div>
+            <div><?php if (isset($_GET['id_mod'])) {echo 'Modificar producto'; }
+            else{ echo 'Buscar producto'; } ?></div>
             <div><?php echo $fecha; ?></div>
         </div>
         <div class="products-status-1">
@@ -150,16 +147,19 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                 <div class="form-group">
                     <input type="submit" id="btnUpdate" name="btnUpdate" class="btn btn-primary" value="Modificar">
                 </div>
-                <div class="salto"></div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary" onclick="javascript: cancelar();" value="Cancelar">
+                </div>
             </form>
             <?php  } ?>
-            <form action="search.php" class="frm-search" method="post">
+            <!-- <form action="search.php" class="frm-search" method="post">
                 <label class="label-search" for="busqueda">Buscar:</label>
                 <div>
-                    <input class="form-control-search" type="text" name="busqueda" id="busqueda">
+                    <input class="form-control" type="text" name="busqueda" id="busqueda">
                 </div>
                 <input class="btn-search" type="submit" value="Buscar">
-            </form>
+            </form> -->
+            <?php if (empty(($_GET['id_mod']))) { ?>
             <h1>Resultados de búsqueda</h1>
             <table class="stripe">
                 <thead>
@@ -174,8 +174,11 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                 <tbody><?php echo $tabla; ?></tbody>
                 
             </table>
+            <?php  } ?>
         </div>
         <br>
+
+
     </main>
 
 </body>

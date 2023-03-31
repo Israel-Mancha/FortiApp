@@ -11,7 +11,7 @@ class crud extends BD_PDO {
         return $admin;
     }
     function buscar($nombre){
-        $result = $this->Ejecutar_Instruccion("SELECT ID_producto,tbl_productos.nombre,tbl_categoria.nombre,cantidad FROM tbl_productos INNER JOIN tbl_categoria ON tbl_productos.ID_cat=tbl_categoria.ID_categoria WHERE tbl_productos.nombre LIKE '%$nombre%' LIMIT 10");
+        $result = $this->Ejecutar_Instruccion("SELECT ID_producto,tbl_productos.nombre,tbl_categoria.nombre,cantidad FROM tbl_productos INNER JOIN tbl_categoria ON tbl_productos.ID_cat=tbl_categoria.ID_categoria WHERE tbl_productos.nombre LIKE '%$nombre%'");
         return $result;
     }
     function buscar_mod($id_producto){
