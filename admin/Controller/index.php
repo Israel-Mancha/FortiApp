@@ -19,5 +19,4 @@
         header("Location: index.php");
       }
     include '../View/index.php';
-    
 ?>
