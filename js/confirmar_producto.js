@@ -10,7 +10,7 @@ $(document).on('click','#confirmar',function(){
             window.location.href="ventana_emergente.php";
             }
             else{
-                alert("No, pa");
+                alert("No puedes seleccionar más de un producto");
             }
         }
     });
