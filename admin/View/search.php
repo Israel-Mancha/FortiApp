@@ -95,7 +95,8 @@
     </aside>
     <main class="main">
         <div class="main-top">
-            <div>Buscar producto</div>
+            <div><?php if (isset($_GET['id_mod'])) {echo 'Modificar producto'; }
+            else{ echo 'Buscar producto'; } ?></div>
             <div><?php echo $fecha; ?></div>
         </div>
         <div class="products-status-1">
