@@ -95,7 +95,7 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                 <a href="search.php" class="search"><img src="../img/search.svg" alt="Productos"></a>
             </div>
         </div>
-        <a href="Registro-de-Prestamo.pdf" download class="pdf"><img src="../img/pdf.svg" alt="PDF"></a>
+        <!-- <a href="Registro-de-Prestamo.pdf" download class="pdf"><img src="../img/pdf.svg" alt="PDF"></a> -->
     </aside>
     <main class="main">
         <div class="main-top">

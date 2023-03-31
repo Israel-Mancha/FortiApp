@@ -30,7 +30,7 @@
                 <a href="search.php" class="search"><img src="../img/search.svg" alt="Productos"></a>
             </div>
         </div>
-        <a href="pdf.php" class="pdf"><img src="../img/pdf.svg" alt="PDF"></a>
+        <!-- <a href="pdf.php" class="pdf"><img src="../img/pdf.svg" alt="PDF"></a> -->
     </aside>
     <main class="main">
         <div class="main-top">
