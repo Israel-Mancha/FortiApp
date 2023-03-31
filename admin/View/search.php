@@ -5,21 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles-form.css">
     <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/styles-search.css">
     <!--Datatable plugin CSS file -->
-    <link rel="stylesheet" href=
-"https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" />
-  
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" />
     <!--jQuery library file -->
-    <script type="text/javascript" 
-        src="https://code.jquery.com/jquery-3.5.1.js">
-    </script>
-  
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <!--Datatable plugin JS library file -->
-    <script type="text/javascript" 
-src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
-    </script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
     <title>Productos</title>
     <style>
     table {
@@ -95,7 +88,7 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                 <a href="search.php" class="search"><img src="../img/search.svg" alt="Productos"></a>
             </div>
         </div>
-        <a href="Registro-de-Prestamo.pdf" download class="pdf"><img src="../img/pdf.svg" alt="PDF"></a>
+        <a href="pdf.php" class="pdf"><img src="../img/pdf.svg" alt="PDF"></a>
     </aside>
     <main class="main">
         <div class="main-top">
@@ -148,15 +141,14 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                 </div>
 
                 <div class="form-group">
-                    <input type="submit" id="btnUpdate" name="btnUpdate" class="btn btn-primary" value="Modificar">
+                    <input type="submit" id="btnUpdate" name="btnUpdate" class="btn btn-primary" value="Registrar">
                 </div>
-                <div class="salto"></div>
             </form>
             <?php  } ?>
             <form action="search.php" class="frm-search" method="post">
                 <label class="label-search" for="busqueda">Buscar:</label>
                 <div>
-                    <input class="form-control-search" type="text" name="busqueda" id="busqueda">
+                    <input class="form-control" type="text" name="busqueda" id="busqueda">
                 </div>
                 <input class="btn-search" type="submit" value="Buscar">
             </form>
@@ -176,6 +168,8 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
             </table>
         </div>
         <br>
+
+
     </main>
 
 </body>
