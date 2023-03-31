@@ -11,7 +11,7 @@ $(document).on('click','#confirmar',function(){
             }
             else{
                 alert("No puedes seleccionar más de un producto");
-            }
+            }   
         }
     });
 });
