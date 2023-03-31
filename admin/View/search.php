@@ -145,13 +145,13 @@
                 </div>
             </form>
             <?php  } ?>
-            <form action="search.php" class="frm-search" method="post">
+            <!-- <form action="search.php" class="frm-search" method="post">
                 <label class="label-search" for="busqueda">Buscar:</label>
                 <div>
                     <input class="form-control" type="text" name="busqueda" id="busqueda">
                 </div>
                 <input class="btn-search" type="submit" value="Buscar">
-            </form>
+            </form> -->
             <h1>Resultados de búsqueda</h1>
             <table class="stripe">
                 <thead>
