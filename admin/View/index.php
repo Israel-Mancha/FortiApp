@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles.css">
     <title>FortiApp</title>
+    <script>
+        function entregar(id_detalle) {
+            window.location.href = "index.php?id=" + id_detalle;
+    }
+    </script>
 </head>
 <body>
     <header class="header">

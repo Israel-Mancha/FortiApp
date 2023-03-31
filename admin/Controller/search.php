@@ -24,6 +24,7 @@ if (isset($_POST['btnUpdate'])) {
   @$cant = $_POST['cant'];
   @$img = $_POST['archivo'];
   $obj->actualizar($nombre,$img,$categoria,$cant,$ID);
+  header("Location: search.php");
 }
 @$datos_categoria = $obj->listados();
 

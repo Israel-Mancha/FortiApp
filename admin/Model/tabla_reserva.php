@@ -23,8 +23,11 @@ class index extends BD_PDO {
         return $admin;
     }
     function tabla_detalle(){
-        $result_tabla = $this->Ejecutar_Instruccion("SELECT tbl_productos.nombre, nombres, matricula,tbl_carrera.nombre FROM tbl_productos INNER JOIN tbl_detalle ON tbl_productos.ID_producto=tbl_detalle.id_producto INNER JOIN tbl_usuario ON tbl_detalle.id_usuario=tbl_usuario.matricula INNER JOIN tbl_carrera ON tbl_usuario.carrera=tbl_carrera.ID_carrera WHERE activo = 1 ORDER by ID_detalle DESC"); 
+        $result_tabla = $this->Ejecutar_Instruccion("SELECT tbl_productos.nombre, nombres, matricula,tbl_carrera.nombre,ID_detalle FROM tbl_productos INNER JOIN tbl_detalle ON tbl_productos.ID_producto=tbl_detalle.id_producto INNER JOIN tbl_usuario ON tbl_detalle.id_usuario=tbl_usuario.matricula INNER JOIN tbl_carrera ON tbl_usuario.carrera=tbl_carrera.ID_carrera WHERE activo = 1 ORDER by ID_detalle DESC"); 
         return $result_tabla;
+    }
+    function entregar_producto($id_detalle){
+        $this->Ejecutar_Instruccion("UPDATE tbl_detalle SET activo=0 WHERE ID_detalle=$id_detalle");
     }
     function tabla_reserva($result){
         $tabla="";
@@ -35,7 +38,7 @@ class index extends BD_PDO {
             $tabla.='<td>'.$renglon[1].'</td>';
             $tabla.='<td>'.$renglon[2].'</td>';
             $tabla.='<td>'.$renglon[3].'</td>';
-            $tabla.='<td></td>';
+            $tabla.='<td><input type="submit" id="entregar" name="entregar" value="Entregar"  onclick="javascript: entregar('.$renglon[4].');"></td>';
             $tabla.='</tr>';
         }
         return $tabla;
